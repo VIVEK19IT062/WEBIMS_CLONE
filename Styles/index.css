@@ -1,0 +1,295 @@
+body {
+  font-family: "Arial", Serif;
+  background-color: #cdc7c7;
+  overflow-x: hidden;
+}
+
+i{
+  color:#486581;
+} 
+
+.navbar {
+  background-color: #ffffff;
+  overflow: hidden;
+  height: 63px;
+}
+
+.logo-image{
+  width:45px;
+  height:45px;
+  display: block;
+  text-align: center;
+  padding: 1px 1px;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  background: transparent;
+  padding: 10px 8px;
+  text-decoration: none;
+  font-size: 22px;
+  transition: 1s;
+}
+
+.navbar form input{
+  margin-top: 8px;
+  width:200px;
+  height:10px;
+  border-radius:25px;
+  background: transparent;
+  padding: 8px 8px;
+  transition: 1s;
+}
+
+.navbar .navbar-left a{
+  float: left;
+}
+
+.navbar .navbar-right a{
+  float: right;
+}
+
+.navbar .navbar-right form{
+  float: right;
+}
+
+.navbar ul {
+  margin: 8px 0 0 0;
+  list-style: none;
+}
+.navbar a:hover {
+  background-color: #ddd;
+  border-radius: 40px;
+  color: #000;
+  transition: 0.3s;
+}
+
+.nav-profile-button{
+  height: 30px;
+  width: 30px;
+}
+
+.menu-icon {
+  font-size: 25px;
+}
+.side-nav {
+  height: 100%;
+  width: 250px;
+  margin-top: 10px;
+  position: fixed;
+  z-index: 1;
+  left: 5;
+  background-color: #cdc7c7;
+  overflow-x: hidden;
+  padding-top: 20px;
+  transition: 0.5s;
+  box-shadow: 2px 2px 15px grey
+}
+.side-nav a {
+  padding: 10px 10px 10px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  color: rgb(12, 0, 0);
+  display: block;
+  transition: 0.3s;
+}
+.side-nav a:hover {
+  color: #333;
+}
+.side-nav .btn-close {
+  position: absolute;
+  top: 0;
+  right: 22px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+#main {
+  transition: margin-left 0.5s;
+  padding: 0px 0 0 10px;
+  overflow: hidden;
+  margin-Left: 250px;
+  box-sizing: border-box;
+}
+
+.top-continer{
+  display: flex;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px 0px;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.top-continer-buttons{
+  border: 1px solid rgb(46, 46, 46);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 4px 20px;
+  margin: 0px 5px;
+}
+
+.top-continer-buttons-color{
+  background-color: #ffffff;
+}
+
+.top-continer-save-buttons-color{
+  background-color: #5a5fe2;
+  color: #ffffff;
+}
+
+.top-continer-menu-buttons{
+  padding: 5px 2px;
+}
+
+.top-continer-active-buttons{
+  padding: 5px 10px;
+}
+
+.top-continer-checkbox{
+  padding: 5px 2px;
+}
+
+.fa-triangle-exclamation{
+  color: rgb(226, 133, 12);
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* text-align: center; */
+  /* align-items: center; */
+  /* justify-items: center; */
+  background: #ffffff;
+  margin-bottom:20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.flex-item{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0;
+  width: 0;
+
+}
+
+.patient-section-one-tables {
+	font-size : 12px;
+  width: 400px;
+}
+
+.patient-section-one-tables .labels{
+  display: flex ;
+  justify-content:right ;
+  width: 180px;
+  align-items: center;
+  height: 25px;
+  /* background: rgb(23, 167, 18); */
+}
+
+.patient-section-one-tables td input , select{
+  display: flex;
+  justify-content:left;
+  height: 25px;
+  width: 250px;
+  padding: 0;
+  border: 1px solid rgb(46, 46, 46);
+  border-radius: 4px;
+  box-sizing: border-box;
+  /* background: rgb(145, 167, 18); */
+}
+
+.patient-section-one-tables td textarea{
+  display: flex;
+  justify-content:left;
+  width: 250px;
+  padding: 0;
+  border: 1px solid rgb(46, 46, 46);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.patient-section-one-tables td input[type=checkbox] {
+  margin: 0px;
+  width: 20px;
+  height: 20px;
+}
+
+.patient-section-one-tables td img {
+  display: flex;
+  height: 150px;
+  width: 150px;
+  border: 1px solid rgb(46, 46, 46);
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.container{
+  background: #ffffff;
+  margin-bottom:20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.contactheader {
+  font-size: 18px;
+  color: #486581;
+}
+
+.contactdetailheadericon {
+  margin-left: 5px;
+}
+
+.lightFont{
+  font-size: 12px;
+  color: #486581;
+  margin-top: 5px;
+}
+
+.patient-section-three-table{
+  font-size : 12px;
+  width: 100%;
+  color: #486581;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.patient-section-three-table td, th {
+  border: 1px solid #486581;
+  height: 25px;
+}
+
+.patient-section-three-table i {
+  margin-left: 5px;
+}
+
+.patient-section-three-table .lightbg{
+  background: #cdc7c7;
+}
+
+.patient-section-three-table .without-boarder{
+  border: none;
+  border-left: 1px solid #486581;
+}
+
+.website-type-col-width{
+  width: 25%;
+}
+
+.email-address-col-width{
+  width: 15%;
+}
+
+.fax-phone-col-width{
+  width: 10%;
+}
+
+.boldfont{
+  font-weight: bold;
+}

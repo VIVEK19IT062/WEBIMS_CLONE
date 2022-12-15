@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles//index.css">
+    <title>WebIMS Clone</title>
+    <script src="https://kit.fontawesome.com/2cb6698122.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+      <nav class="navbar">
+        <span class="open-slide">
+            <a href="#" onclick="openSideMenu()">
+                <img src="../assests/Logo.png" class="logo-image" alt="Italian Trulli">
+            </a>
+        </span>
+        <ul class="navbar-left">
+            <li><a href="#"><i class="fa-solid fa-gear"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-calendar-days"></i></a></li>
+
+            <li><a href="#"><i class="fa-solid fa-user-shield"></i></a></li>
+            <li><a href="#"><i class="fa-sharp fa-solid fa-shield-halved"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-notes-medical"></i></a></li>
+
+            <li><a href="#"><i class="fa-solid fa-flask"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-prescription"></i></a></li>
+            <li><a href="#"><i class="fa-sharp fa-solid fa-file-prescription"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-file-invoice"></i></a></li>
+
+            <li><a href="#"><i class="fa-solid fa-dollar-sign"></i></a></li>
+            <li><a href="#"><i class="fa-sharp fa-solid fa-file-invoice-dollar"></i></a></li>
+            <li><a href="#"><i class="fa-sharp fa-solid fa-hand-holding-dollar"></i></i></a></li>
+            <li><a href="#"><i class="fa-sharp fa-solid fa-circle-dollar-to-slot"></i></a></li>
+
+            <li><a href="#"><i class="fa-sharp fa-solid fa-filter-circle-dollar"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-sack-dollar"></i></a></li>
+            <li><a href="#"><i class="fa-sharp fa-solid fa-receipt"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-envelope-open-text"></i></a></li>
+
+            <li><a href="#"><i class="fa-solid fa-chart-line"></i></a></li>
+        </ul>
+
+        <ul class="navbar-right">
+          <li><a href="#"><img src="../assests/Logo.png" class="nav-profile-button" alt="Italian Trulli"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-lock"></i></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-question"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-calendar "></i></a></li>
+          <li>
+            <form action="#">
+              <input type="text"
+                  placeholder="Search Courses"
+                  name="search">
+            </form>
+          </li>
+        </ul>
+        
+        
+      </nav>
+    </header>
+    <div id="side-menu" class="side-nav">
+        <a href="#" class="btn-close" onclick="closeSideMenu()">&times;</a>
+        <a href="#">Dashboard</a>
+        <a href="#">Demographics</a>
+        <a href="#">Insurance</a>
+        <a href="#">Case</a>
+        <a href="#">Contacts</a>
+        <a href="#">Employer</a>
+        <a href="#">Apppointmants</a>
+        <a href="#">Encounters</a>
+        <a href="#">Documents</a>
+        <a href="#">Notes & Alerts</a>
+        <a href="#">Forms</a>
+        <a href="#">Consents</a>
+        <a href="#">Reminder Preference</a>
+    </div>
+
+    <div class="top-continer">
+      <span class="top-continer-checkbox"><input type="checkbox" name="" checked></i></span>
+      <span class="top-continer-active-buttons">Active</span>
+      <span class="top-continer-menu-buttons"><i class="fa-solid fa-ellipsis-vertical" ></i></i></span>
+      <span class="top-continer-buttons top-continer-buttons-color">Verify</span>
+      <span class="top-continer-buttons top-continer-buttons-color">cancel Changes</span>
+      <span class="top-continer-buttons top-continer-save-buttons-color"><span><i class="fa-solid fa-triangle-exclamation"></i></span>Save</span>
+    </div>
+
+    <div id="main">
+      <form>
+        <div class="flex-container">
+          <div class="flex-item">
+              <table class="patient-section-one-tables">
+                <tr>
+                  <td class="labels"></td>
+                  <td><img src="../assests/photo.jpg" alt="Italian Trulli"></td>
+                </tr>
+                <tr>
+                  <td class="labels"></td>
+                  <td>PT0000000026</td>
+                </tr>
+                <tr>
+                  <td class="labels">Prefix:</td>
+                  <td><input type="text" name=””></td>
+                </tr>
+                <tr>
+                  <td class="labels">First Name:</td>
+                  <td><input type="text" name=””></td>
+                </tr>
+                <tr>
+                  <td class="labels">Middle Name:</td>
+                  <td><input type="text" name=””></td>
+                </tr>
+                <tr>
+                  <td class="labels">Last name:</td>
+                  <td><input type="text" name=””></td>
+                </tr>
+                <tr>
+                  <td class="labels">Last name 2:</td>
+                  <td><input type="text" name=””></td>
+                </tr>
+                <tr>
+                  <td class="labels">Suffix:</td>
+                  <td><input type="text" name=””></td>
+                </tr>
+                <tr>
+                  <td class="labels">AKA:</td>
+                  <td><input type="text" name=””></td>
+                </tr>
+              </table>
+            </div>
+          <div class="flex-item">
+            <table class="patient-section-one-tables">
+              <tr>
+                <td class="labels">Sex:</td>
+                <td>
+                  <select id="sex" name="sex">
+                    <option value="male">Male</option>
+                    <option value="female">female</option>
+                    <option value="unknown">UnKnown</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="labels">DOB:</td>
+                <td><input type="date" name=””></td>
+              </tr>
+              <tr>
+                <td class="labels">Pref language:</td>
+                <td>
+                  <select id="preflanguage" name="preflanguage">
+                    <option value="english">English</option>
+                    <option value="gujarati">Gujarati</option>
+                    <option value="hindi">Hindi</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="labels">Interpreter:</td>
+                <td><input type="checkbox" name="interpreter"></td>
+              </tr>
+              <tr>
+                <td class="labels">Status:</td>
+                <td>
+                  <select id="status" name="status">
+                    <option value="first">First</option>
+                    <option value="registration">Registration</option>
+                    <option value="immunizations">Immunizations</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="labels">Risk:</td>
+                <td><input type="text" name=””></td>
+              </tr>
+              <tr>
+                <td class="labels">Marital Status:</td>
+                <td>
+                  <select id="maritalstatus" name="maritalstatus">
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="annulled">Annulled</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="labels">SSN:</td>
+                <td><input type="text" name=””></td>
+              </tr>
+              <tr>
+                <td class="labels">Race:</td>
+                <td>
+                  <select id="race" name="race">
+                    <option value="white">White</option>
+                    <option value="asian">Asian</option>
+                    <option value="black">Black</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="labels">Ethnicity:</td>
+                <td>
+                  <select id="ethnicity" name="ethnicity">
+                    <option value="otherethnicity">Other Ethnicity</option>
+                    <option value=">hispaniclatino">Hispanic/Latino</option>
+                    <option value="nonhispaniclatino">Non-Hispanic/Latino</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="flex-item">
+            <table class="patient-section-one-tables">
+              <tr>
+                <td class="labels">Self Pay:</td>
+                <td><input type="checkbox" name="selfpay"></td>
+              </tr>
+              <tr>
+                <td class="labels">Default Facility:</td>
+                <td>
+                  <select id="defaultfacility" name="defaultfacility">
+                    <option value="white">White</option>
+                    <option value="asian">Asian</option>
+                    <option value="black">Black</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="labels">Default Provider:</td>
+                <td>
+                  <select id="defaultprovider" name="defaultprovider">
+                    <option value="white">White</option>
+                    <option value="asian">Asian</option>
+                    <option value="black">Black</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="labels">Timezone:</td>
+                <td>
+                  <select id="timezone" name="timezone">
+                    <option value="UTC-10">UTC-10</option>
+                    <option value="UTC-09">UTC-09</option>
+                    <option value="UTC-08">UTC-08</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="labels">Default Pharmacy:</td>
+                <td>
+                  <select id="defaultpharmacy" name="defaultpharmacy">
+                    <option value="SU">SU</option>
+                    <option value="AH">AH</option>
+                    <option value="ND">ND</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="labels">Use current pharmacy for all Rx:</td>
+                <td class="inputfeild"><input type="checkbox" name="usecurrentpharmacyforallrx"></td>
+              </tr>
+              <tr>
+                <td class="labels">PCP Same As Provider:</td>
+                <td><input type="checkbox" name="selfpay"></td>
+              </tr>
+              <tr>
+                <td class="labels">Marital Status:</td>
+                <td>
+                  <select id="maritalstatus" name="maritalstatus">
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="annulled">Annulled</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="labels">SSN:</td>
+                <td><input type="text" name=””></td>
+              </tr>
+              <tr>
+                <td class="labels">PCP:</td>
+                <td>
+                  <select id="pcp" name="pcp">
+                    <option value="vivek">Vivek</option>
+                    <option value="raj">Raj</option>
+                    <option value="krunal">Krunal</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td class="labels">Fee Schedule:</td>
+                <td>
+                  <select id="feeschedule" name="feeschedule">
+                    <option value="today">Today</option>
+                    <option value="tomorrow">Tomorrow</option>
+                    <option value="yesterday">Yesterday</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="contactdetailheader">Contact Details<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+          <div class="lightFont">Please set the preferences after adding the contact information, the section to set preference can be found below the contact section of the page.</div>
+        </div>
+
+        <div class="container">
+          <div class="contactdetailheader">Contact Preference</div>
+          <table  class="patient-section-three-table">
+            <tr>
+              <td class="website-type-col-width">Type</td>
+              <td class="email-address-col-width">Address</td>
+              <td class="fax-phone-col-width">Phone<span><i class="fa-sharp fa-solid fa-circle-exclamation"></i></span></td>
+              <td class="fax-phone-col-width">Fax</td>
+              <td class="email-address-col-width">Email<span><i class="fa-sharp fa-solid fa-circle-exclamation"></i></span></td>
+              <td class="website-type-col-width">Website</td>
+            </tr>
+            <tr>
+              <td class="lightbg without-boarder">Appointment Reminder</td>
+              <td class="lightbg"></td>
+              <td></td>
+              <td class="lightbg"></td>
+              <td></td>
+              <td class="lightbg"></td>
+            </tr>
+            <tr>
+              <td class="lightbg without-boarder">Mailing</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="lightbg without-boarder">Primary</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="lightbg without-boarder">Statement</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="boldfont">Preferred Comm.</td>
+              <td colspan="3"></td>
+              <td colspan="2"></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="container">
+          <div class="contactdetailheader">Contact Details<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+            <div class="flex-container">
+              <div class="flex-item">
+                <table class="patient-section-one-tables">
+                  <tr>
+                    <td class="labels">Employment:</td>
+                    <td>
+                      <select id="employment" name="employment">
+                        <option value="fulltimeemployed">Full time employed</option>
+                        <option value="parttimeemployed">Part time employed</option>
+                        <option value="unemployed">Unemployed</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="labels">First Called Date:</td>
+                    <td><input type="date" name=””></td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Deceased Time:</td>
+                    <td><input type="time" name=””></td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Mother's Last Name:</td>
+                    <td><input type="text" name=””></td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Birth Place:</td>
+                    <td><input type="text" name=””></td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Citizenship:</td>
+                    <td>
+                      <select id="citizenship" name="citizenship">
+                        <option value="american">American</option>
+                        <option value="indian">indian</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Note:</td>
+                    <td><textarea id="note" name="note" rows="4" cols="50"></textarea></td>
+                  </tr>
+                </table>
+              </div>
+              <div class="flex-item">
+                <table class="patient-section-one-tables">
+                  <tr>
+                    <td class="labels">Gender Identity:</td>
+                    <td>
+                      <select id="genderidentity" name="genderidentity">
+                        <option value="male">Male</option>
+                        <option value="female">female</option>
+                        <option value="unknown">UnKnown</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Referral Source:</td>
+                    <td>
+                      <select id="referralsource" name="referralsource">
+                        <option value="vivekhospital">Vivek hospital</option>
+                        <option value="surathospital">Surat hospital</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Mother's Maiden:</td>
+                    <td><input type="text" name="mothersmaiden"></td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Mother Identifier</td>
+                    <td><input type="text" name="motheridentifier"></td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Multiple Birth:</td>
+                    <td><input type="checkbox" name="multiplebirth"></td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Religion:</td>
+                    <td>
+                      <select id="religion" name="religion">
+                        <option value="christian">Christian: American Baptist Church</option>
+                        <option value="hindu">hindu</option>
+                      </select>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div class="flex-item">
+                <table class="patient-section-one-tables">
+                  <tr>
+                    <td class="labels">Sexual Orientation:</td>
+                    <td>
+                      <select id="sexualorientation" name="sexualorientation">
+                        <option value="bisexual">Bisexual</option>
+                        <option value="heterosexual">Heterosexual</option>
+                        <option value="homosexual">Homosexual</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Deceased:</td>
+                    <td><input type="checkbox" name="deceased"></td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Mother's Middle Name</td>
+                    <td><input type="text" name="mothersmiddlename"></td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Veteran Military Status:</td>
+                    <td>
+                      <select id="veteranmilitarystatus" name="veteranmilitarystatus">
+                        <option value="norecord">norecord</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Nationality:</td>
+                    <td>
+                      <select id="Nationality" name="Nationality">
+                        <option value="american">american</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="labels">Driver's License:</td>
+                    <td><input type="text" name=””></td>
+                  </tr>
+                </table>
+              </div>
+              </div>
+          </div>
+        </form>
+      </div>
+
+    <script>
+        function openSideMenu() {
+            document.getElementById('side-menu').style.width = '250px';
+            document.getElementById('main').style.marginLeft = '250px';
+        }
+        function closeSideMenu() {
+            document.getElementById('side-menu').style.width = '0';
+            document.getElementById('main').style.marginLeft = '0';
+        }
+    </script>
+</body>
+</html>
