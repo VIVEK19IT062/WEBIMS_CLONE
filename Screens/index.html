@@ -52,7 +52,7 @@
           <li>
             <form action="#">
               <input type="text"
-                  placeholder="Search Courses"
+                  placeholder="Search Patient - Iname fname dob #chart"
                   name="search">
             </form>
           </li>
@@ -61,8 +61,21 @@
         
       </nav>
     </header>
-    <div id="side-menu" class="side-nav">
-        <a href="#" class="btn-close" onclick="closeSideMenu()">&times;</a>
+
+    <div id="side-menu" class="side-nav-left">
+        <a href="#">Dashboard<span><a href="#" class="btn-close" onclick="closeSideMenu()">&times;</a></span></a>
+        <a href="#">Demographics</a>
+        <a href="#">Insurance</a>
+        <a href="#">Case</a>
+        <a href="#">Contacts</a>
+        <a href="#">Employer</a>
+        <a href="#">Apppointmants</a>
+        <a href="#">Encounters</a>
+        <a href="#">Documents</a>
+        <a href="#">Notes & Alerts</a>
+        <a href="#">Forms</a>
+        <a href="#">Consents</a>
+        <a href="#">Reminder Preference</a>
         <a href="#">Dashboard</a>
         <a href="#">Demographics</a>
         <a href="#">Insurance</a>
@@ -78,17 +91,38 @@
         <a href="#">Reminder Preference</a>
     </div>
 
-    <div class="top-continer">
-      <span class="top-continer-checkbox"><input type="checkbox" name="" checked></i></span>
-      <span class="top-continer-active-buttons">Active</span>
-      <span class="top-continer-menu-buttons"><i class="fa-solid fa-ellipsis-vertical" ></i></i></span>
-      <span class="top-continer-buttons top-continer-buttons-color">Verify</span>
-      <span class="top-continer-buttons top-continer-buttons-color">cancel Changes</span>
-      <span class="top-continer-buttons top-continer-save-buttons-color"><span><i class="fa-solid fa-triangle-exclamation"></i></span>Save</span>
-    </div>
+    <div class="side-nav-right">
+      <a href="#"><i class="fa-sharp fa-solid fa-fax"></i>
+        <span>4</span>
+      </a>
+      <a href="#"><i class="fa-solid fa-comment-dots"></i>
+        <span>0</span>
+      </a>
+      <a href="#"><i class="fa-sharp fa-solid fa-envelope"></i>
+        <span>4</span>
+      </a>
+      <a href="#"><i class="fa-solid fa-voicemail"></i>
+        <span>0</span>
+      </a>
+      <a href="#"><i class="fa-solid fa-list-check"></i></i>
+        <span>0</span>
+      </a>
+      <a href="#"><i class="fa-solid fa-clipboard"></i></a>
+      <a href="#"><i class="fa-solid fa-note-sticky"></i></a>
+  </div>
 
     <div id="main">
-      <form>
+      <div class="top-continer">
+        <span class="top-continer-checkbox"><input type="checkbox" name="" checked></i></span>
+        <span class="top-continer-active-buttons">Active</span>
+        <span class="top-continer-menu-buttons"><i class="fa-solid fa-ellipsis-vertical" ></i></i></span>
+        <span class="top-continer-buttons top-continer-buttons-color">Verify</span>
+        <span class="top-continer-buttons top-continer-buttons-color">Cancel Changes</span>
+        <span class="top-continer-buttons top-continer-save-buttons-color"><span><i class="fa-solid fa-triangle-exclamation"></i></span>Save</span>
+      </div>
+
+      <div class="bottom-continer">
+
         <div class="flex-container">
           <div class="flex-item">
               <table class="patient-section-one-tables">
@@ -98,14 +132,14 @@
                 </tr>
                 <tr>
                   <td class="labels"></td>
-                  <td>PT0000000026</td>
+                  <td class="patient-id">PT0000000026</td>
                 </tr>
                 <tr>
                   <td class="labels">Prefix:</td>
                   <td><input type="text" name=””></td>
                 </tr>
                 <tr>
-                  <td class="labels">First Name:</td>
+                  <td class="labels">First Name<span class="mandatory-feild">*</span>:</td>
                   <td><input type="text" name=””></td>
                 </tr>
                 <tr>
@@ -113,7 +147,7 @@
                   <td><input type="text" name=””></td>
                 </tr>
                 <tr>
-                  <td class="labels">Last name:</td>
+                  <td class="labels">Last name:<span class="mandatory-feild">*</span></td>
                   <td><input type="text" name=””></td>
                 </tr>
                 <tr>
@@ -133,7 +167,7 @@
           <div class="flex-item">
             <table class="patient-section-one-tables">
               <tr>
-                <td class="labels">Sex:</td>
+                <td class="labels">Sex:<span class="mandatory-feild">*</span></td>
                 <td>
                   <select id="sex" name="sex">
                     <option value="male">Male</option>
@@ -359,7 +393,7 @@
         </div>
 
         <div class="container">
-          <div class="contactdetailheader">Contact Details<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+          <div class="contactdetailheader"><span><i class="fa-solid fa-circle-chevron-down contactdetailheadericon"></i>Other Details</span></div>
             <div class="flex-container">
               <div class="flex-item">
                 <table class="patient-section-one-tables">
@@ -492,8 +526,9 @@
               </div>
               </div>
           </div>
-        </form>
+
       </div>
+    </div>
 
     <script>
         function openSideMenu() {
@@ -501,7 +536,7 @@
             document.getElementById('main').style.marginLeft = '250px';
         }
         function closeSideMenu() {
-            document.getElementById('side-menu').style.width = '0';
+            document.getElementById('side-menu').style.width = '30px';
             document.getElementById('main').style.marginLeft = '0';
         }
     </script>

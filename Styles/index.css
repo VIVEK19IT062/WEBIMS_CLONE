@@ -1,7 +1,9 @@
 body {
   font-family: "Arial", Serif;
-  background-color: #cdc7c7;
+  background-color: #d6d6d8d0;
   overflow-x: hidden;
+  margin: 0;
+  height: 100vh;
 }
 
 i{
@@ -10,8 +12,10 @@ i{
 
 .navbar {
   background-color: #ffffff;
+  width: 100%;
   overflow: hidden;
-  height: 63px;
+  height: 60px;
+  position: fixed;
 }
 
 .logo-image{
@@ -36,8 +40,9 @@ i{
 
 .navbar form input{
   margin-top: 8px;
-  width:200px;
+  width:250px;
   height:10px;
+  border: 1px solid grey;
   border-radius:25px;
   background: transparent;
   padding: 8px 8px;
@@ -75,52 +80,84 @@ i{
 .menu-icon {
   font-size: 25px;
 }
-.side-nav {
+.side-nav-left {
   height: 100%;
-  width: 250px;
-  margin-top: 10px;
+  width: 180px;
+  margin: 70px 10px 0 0;
   position: fixed;
   z-index: 1;
-  left: 5;
-  background-color: #cdc7c7;
+  left: 20;
+  background-color: #d6d6d8d0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  transition: 0.5s;
+  border: 1px solid rgb(46, 46, 46);
+  border-radius: 4px;
+}
+
+.side-nav-left a, .side-nav-right a {
+  padding: 10px 10px 10px 20px;
+  text-decoration: none;
+  font-size: 17.5px;
+  color: rgb(12, 0, 0);
+  display: block;
+  transition: 0.3s;
+}
+.side-nav-left a:hover {
+  color: #333;
+}
+.side-nav-left .btn-close {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  font-size: 20px;
+}
+
+.side-nav-right {
+  height: 100%;
+  width: 50px;
+  margin-top: 60px;
+  justify-items: center;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  background-color: #ffffffd0;
   overflow-x: hidden;
   padding-top: 20px;
   transition: 0.5s;
   box-shadow: 2px 2px 15px grey
 }
-.side-nav a {
-  padding: 10px 10px 10px 20px;
-  text-decoration: none;
-  font-size: 17px;
-  color: rgb(12, 0, 0);
-  display: block;
+
+.side-nav-right span{
+  font-size: 15px;
+  color: grey;
   transition: 0.3s;
 }
-.side-nav a:hover {
-  color: #333;
-}
-.side-nav .btn-close {
-  position: absolute;
-  top: 0;
-  right: 22px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+
 #main {
   transition: margin-left 0.5s;
-  padding: 0px 0 0 10px;
-  overflow: hidden;
-  margin-Left: 250px;
+  padding: 80px 55px 0 40px;
+  height: 93.5%;
+  margin-Left: 180px;
   box-sizing: border-box;
 }
 
 .top-continer{
   display: flex;
+  right: 0;
+  flex-wrap:wrap;
   border-radius: 10px;
   box-sizing: border-box;
   padding: 10px 0px;
   justify-content: flex-end;
   width: 100%;
+}
+
+.bottom-continer{
+  margin-top: 10px;
+  height: 100%;
+  overflow-y: scroll;
 }
 
 .top-continer-buttons{
@@ -189,7 +226,17 @@ i{
   width: 180px;
   align-items: center;
   height: 25px;
-  /* background: rgb(23, 167, 18); */
+}
+
+.mandatory-feild {
+  font-size: 22px;
+  color: rgb(248, 103, 0);
+}
+
+.patient-id{
+  font-size : 18px;
+  font-weight: bold;
+  color: grey;
 }
 
 .patient-section-one-tables td input , select{
@@ -201,7 +248,6 @@ i{
   border: 1px solid rgb(46, 46, 46);
   border-radius: 4px;
   box-sizing: border-box;
-  /* background: rgb(145, 167, 18); */
 }
 
 .patient-section-one-tables td textarea{
@@ -243,7 +289,7 @@ i{
 }
 
 .contactdetailheadericon {
-  margin-left: 5px;
+  margin: 0px 5px 0px 5px;
 }
 
 .lightFont{
@@ -270,12 +316,17 @@ i{
 }
 
 .patient-section-three-table .lightbg{
-  background: #cdc7c7;
+  background: #d6d6d8d0;
 }
 
 .patient-section-three-table .without-boarder{
   border: none;
   border-left: 1px solid #486581;
+}
+
+.fa-circle-exclamation{
+  color: rgb(255, 145, 0);
+  font-size: 15px;
 }
 
 .website-type-col-width{
@@ -292,4 +343,27 @@ i{
 
 .boldfont{
   font-weight: bold;
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: grey; 
 }
