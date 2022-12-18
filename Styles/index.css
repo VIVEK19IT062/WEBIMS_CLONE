@@ -139,7 +139,7 @@ i{
   transition: margin-left 0.5s;
   padding: 80px 55px 0 40px;
   height: 93.5%;
-  margin-Left: 180px;
+  margin-Left: 150px;
   box-sizing: border-box;
 }
 
@@ -196,9 +196,8 @@ i{
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  /* text-align: center; */
-  /* align-items: center; */
-  /* justify-items: center; */
+  align-items: center;
+  justify-items: center;
   background: #ffffff;
   margin-bottom:20px;
   border-radius: 10px;
@@ -212,7 +211,6 @@ i{
   justify-content: center;
   flex: 1 1 0;
   width: 0;
-
 }
 
 .patient-section-one-tables {
@@ -309,6 +307,13 @@ i{
 .patient-section-three-table td, th {
   border: 1px solid #486581;
   height: 25px;
+}
+
+.patient-section-three-table input{
+  border: 0px;
+  border-radius: 0px;
+  height: 98%;
+  width: 98%;
 }
 
 .patient-section-three-table i {
