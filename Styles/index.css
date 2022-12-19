@@ -1,15 +1,43 @@
 body {
   font-family: "Arial", Serif;
   background-color: #d6d6d8d0;
-  overflow-x: hidden;
+  overflow-y: hidden;
   margin: 0;
   height: 100vh;
+}
+
+/* scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #486581; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #486581; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #486581; 
+}
+
+.blackcolor{
+  color: #000000;
 }
 
 i{
   color:#486581;
 } 
 
+/*Top navbar*/
 .navbar {
   background-color: #ffffff;
   width: 100%;
@@ -66,9 +94,9 @@ i{
   list-style: none;
 }
 .navbar a:hover {
-  background-color: #ddd;
+  background-color: #ffffff;
   border-radius: 40px;
-  color: #000;
+  color: rgb(0, 54, 231);
   transition: 0.3s;
 }
 
@@ -80,13 +108,15 @@ i{
 .menu-icon {
   font-size: 25px;
 }
+
+/*Side navbar*/
 .side-nav-left {
-  height: 100%;
-  width: 180px;
-  margin: 70px 10px 0 0;
+  height: 89%;
+  width: 195px;
+  margin: 70px 0 0 10px;
   position: fixed;
   z-index: 1;
-  left: 20;
+  left: 0;
   background-color: #d6d6d8d0;
   overflow-x: hidden;
   padding-top: 20px;
@@ -95,10 +125,15 @@ i{
   border-radius: 4px;
 }
 
+.horizontalline{
+  margin: 5px 5px;
+  border-top: 2px soid #000000;
+}
+
 .side-nav-left a, .side-nav-right a {
   padding: 10px 10px 10px 20px;
   text-decoration: none;
-  font-size: 17.5px;
+  font-size: 16.5px;
   color: rgb(12, 0, 0);
   display: block;
   transition: 0.3s;
@@ -108,8 +143,8 @@ i{
 }
 .side-nav-left .btn-close {
   position: absolute;
-  top: 0;
-  right: 0px;
+  right: 3px;
+  top: 5px;
   font-size: 20px;
 }
 
@@ -131,16 +166,21 @@ i{
 
 .side-nav-right span{
   font-size: 15px;
-  color: grey;
+  color: #486581;
   transition: 0.3s;
 }
 
+/*Main screen page*/
 #main {
   transition: margin-left 0.5s;
-  padding: 80px 55px 0 40px;
-  height: 93.5%;
-  margin-Left: 150px;
+  padding: 75px 15px 60px 25px;
+  height: 100%;
+  margin: 0 50px 0 205px;
   box-sizing: border-box;
+}
+
+#patientDetailForm{
+  height: 100%;
 }
 
 .top-continer{
@@ -156,8 +196,9 @@ i{
 
 .bottom-continer{
   margin-top: 10px;
-  height: 100%;
   overflow-y: scroll;
+  height: 100%;
+  padding: 5px;
 }
 
 .top-continer-buttons{
@@ -202,6 +243,7 @@ i{
   margin-bottom:20px;
   border-radius: 10px;
   box-sizing: border-box;
+  flex-direction: row;
 }
 
 .flex-item{
@@ -215,13 +257,12 @@ i{
 
 .patient-section-one-tables {
 	font-size : 12px;
-  width: 400px;
+  width: 100%;
 }
 
 .patient-section-one-tables .labels{
-  display: flex ;
-  justify-content:right ;
-  width: 180px;
+  text-align: right;
+  width: 50%;
   align-items: center;
   height: 25px;
 }
@@ -234,26 +275,23 @@ i{
 .patient-id{
   font-size : 18px;
   font-weight: bold;
-  color: grey;
+  color: #486581;
 }
 
-.patient-section-one-tables td input , select{
-  display: flex;
-  justify-content:left;
+.patient-section-one-tables td input , .patient-section-one-tables td select{
   height: 25px;
-  width: 250px;
-  padding: 0;
-  border: 1px solid rgb(46, 46, 46);
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #486581;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
 .patient-section-one-tables td textarea{
-  display: flex;
-  justify-content:left;
-  width: 250px;
+  height: 50px;
+  width: 100%;
   padding: 0;
-  border: 1px solid rgb(46, 46, 46);
+  border: 1px solid #486581;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -268,7 +306,7 @@ i{
   display: flex;
   height: 150px;
   width: 150px;
-  border: 1px solid rgb(46, 46, 46);
+  border: 1px solid #486581;
   border-radius: 30px;
   box-sizing: border-box;
 }
@@ -290,6 +328,25 @@ i{
   margin: 0px 5px 0px 5px;
 }
 
+/* Contact Detail */
+.containercontactdetail{
+  display: flex;
+  overflow-x: auto;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.addresscontainerofcontactdetail{
+  display: flex;
+  flex: 1;
+  min-width: 53.5rem;
+  background-color: #000000;
+}
+
+.addressinnercontainer{
+  height: 100%;
+}
+
 .lightFont{
   font-size: 12px;
   color: #486581;
@@ -301,6 +358,7 @@ i{
   width: 100%;
   color: #486581;
   border-collapse: collapse;
+  border: 1px solid #486581;
   margin-top: 10px;
 }
 
@@ -316,6 +374,34 @@ i{
   width: 98%;
 }
 
+.bottomtypefeild{
+  text-align: center;
+  border: none !important;
+}
+
+.bottomvaluefeild{
+  text-align: right;
+  border: none !important;
+}
+
+.bottomtwofeildtext{
+  margin-right: 10px;
+  
+}
+
+.bottomvaluefeild select{
+  background-color: #d6d6d8d0;
+}
+
+.bottomtypefeild select, .bottomvaluefeild select{
+  height: 25px;
+  width: 40%;
+  padding: 0;
+  border: 1px solid #486581;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 .patient-section-three-table i {
   margin-left: 5px;
 }
@@ -323,6 +409,10 @@ i{
 .patient-section-three-table .lightbg{
   background: #d6d6d8d0;
 }
+
+.patient-section-three-table .lightbg input{
+  background: #d6d6d8d0;
+} 
 
 .patient-section-three-table .without-boarder{
   border: none;
@@ -350,25 +440,83 @@ i{
   font-weight: bold;
 }
 
-/* scrollbar */
-/* width */
-::-webkit-scrollbar {
-  width: 5px;
+/* contact details */
+.contactdetailoutercontainer{
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  color: #486581;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: grey; 
-  border-radius: 10px;
+.innercontiner{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 8px 0;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: grey; 
+.detailocntinertrash span{
+  float: right;
+}
+
+.addressfeilds{
+  display: flex;
+  flex-direction: column;
+}
+
+.containercontactdetail input, .containercontactdetail select{
+  height: 25px;
+  width: 100%;
+  padding: 0;
+  border: 1px solid #486581;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.containercontactdetail .detailcontiner {
+  position: relative;
+  min-height: 1px;
+  box-sizing: border-box;
+  margin: 5px 0;
+}
+
+.nestedinnercontiner{
+  position: relative;
+  min-height: 1px;
+  box-sizing: border-box;
+  margin: 8px 0;
+}
+
+.addressfeildinputforsecondcolumn{
+  width: 20%;
+  padding-right:30px ;
+}
+
+.inputfeildonezero{
+  width: 10%;
+}
+
+.inputfeildtwozero{
+  width: 20%;
+}
+
+.inputfeildtwofive{
+  width: 25%;
+}
+
+.singlefeildinput{
+  width: 70%;
+}
+
+.inoutfeildpadding{
+  padding-right:30px ;
+}
+
+.fa-trash-can{
+  font-size: 16px;
+}
+
+.fa-circle-plus{
+  font-size: 16px;
 }

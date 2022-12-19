@@ -11,7 +11,7 @@
     <header>
       <nav class="navbar">
         <span class="open-slide">
-            <a href="#" onclick="openSideMenu()">
+            <a href="#">
                 <img src="../assests/Logo.png" class="logo-image" alt="Italian Trulli">
             </a>
         </span>
@@ -63,7 +63,7 @@
     </header>
 
     <div id="side-menu" class="side-nav-left">
-        <a href="#">Dashboard<span><a href="#" class="btn-close" onclick="closeSideMenu()">&times;</a></span></a>
+        <a href="#">Dashboard<span class="btn-close" onclick="sideMenuOpenclose()"><i class="fa-solid fa-arrow-right"></i></span></a>
         <a href="#">Demographics</a>
         <a href="#">Insurance</a>
         <a href="#">Case</a>
@@ -76,19 +76,21 @@
         <a href="#">Forms</a>
         <a href="#">Consents</a>
         <a href="#">Reminder Preference</a>
-        <a href="#">Dashboard</a>
-        <a href="#">Demographics</a>
-        <a href="#">Insurance</a>
-        <a href="#">Case</a>
-        <a href="#">Contacts</a>
-        <a href="#">Employer</a>
-        <a href="#">Apppointmants</a>
-        <a href="#">Encounters</a>
-        <a href="#">Documents</a>
-        <a href="#">Notes & Alerts</a>
-        <a href="#">Forms</a>
-        <a href="#">Consents</a>
-        <a href="#">Reminder Preference</a>
+        <hr class="horizontalline">
+        <a href="#">Allergy</a>
+        <a href="#">Diagnosis</a>
+        <a href="#">Family History</a>
+        <a href="#">Prescription</a>
+        <a href="#">Lab</a>
+        <a href="#">Immunization</a>
+        <a href="#">Vitals</a>
+        <hr class="horizontalline">
+        <a href="#">Authorixation</a>
+        <a href="#">Claims</a>
+        <a href="#">Receipts</a>
+        <a href="#">open credit</a>
+        <a href="#">Statements</a>
+        <a href="#">Ledger</a>
     </div>
 
     <div class="side-nav-right">
@@ -112,14 +114,14 @@
   </div>
 
     <div id="main">
-      <form id="subscription">
+      <form id="patientDetailForm">
         <div class="top-continer">
           <span class="top-continer-checkbox"><input type="checkbox" name="" checked></i></span>
           <span class="top-continer-active-buttons">Active</span>
           <span class="top-continer-menu-buttons"><i class="fa-solid fa-ellipsis-vertical" ></i></i></span>
           <button class="top-continer-buttons top-continer-buttons-color" type="verify" id="verify">Verify</span>
-          <button class="top-continer-buttons top-continer-buttons-color" id="reset">Cancel Changes</button>
-          <button class="top-continer-buttons top-continer-save-buttons-color" type="submit" id="bsubmit"><span><i class="fa-solid fa-triangle-exclamation"></i></span>Save</button>
+          <button class="top-continer-buttons top-continer-buttons-color" id="patientDetailReset">Cancel Changes</button>
+          <button class="top-continer-buttons top-continer-save-buttons-color" type="submit" id="patientDetailsSubmit"><span><i class="fa-solid fa-triangle-exclamation"></i></span>Save</button>
         </div>
   
         <div class="bottom-continer">
@@ -199,6 +201,7 @@
                   <td class="labels">Status:</td>
                   <td>
                     <select id="status" name="status">
+                      <option value="none" selected disable hidden></option>
                       <option value="first">First</option>
                       <option value="registration">Registration</option>
                       <option value="immunizations">Immunizations</option>
@@ -207,7 +210,7 @@
                 </tr>
                 <tr>
                   <td class="labels">Risk:</td>
-                  <td><input type="text" name="risk" id="risk"></td>
+                  <td><span><i class="fa-solid fa-circle-plus"></i>Add Risk</span></td>
                 </tr>
                 <tr>
                   <td class="labels">Marital Status:</td>
@@ -227,6 +230,7 @@
                   <td class="labels">Race:</td>
                   <td>
                     <select id="race" name="race">
+                      <option value="none" selected disable hidden></option>
                       <option value="white">White</option>
                       <option value="asian">Asian</option>
                       <option value="black">Black</option>
@@ -237,6 +241,7 @@
                   <td class="labels">Ethnicity:</td>
                   <td>
                     <select id="ethnicity" name="ethnicity">
+                      <option value="none" selected disable hidden></option>
                       <option value="otherethnicity">Other Ethnicity</option>
                       <option value=">hispaniclatino">Hispanic/Latino</option>
                       <option value="nonhispaniclatino">Non-Hispanic/Latino</option>
@@ -300,23 +305,10 @@
                   <td><input type="checkbox" name="pcpsameasprovider" id="pcpsameasprovider" value="PCP Same As Provider"></td>
                 </tr>
                 <tr>
-                  <td class="labels">Marital Status:</td>
-                  <td>
-                    <select id="maritalstatus" name="maritalstatus">
-                      <option value="married">Married</option>
-                      <option value="divorced">Divorced</option>
-                      <option value="annulled">Annulled</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="labels">SSN:</td>
-                  <td><input type="text" name="ssn2" id="ssn2"></td>
-                </tr>
-                <tr>
                   <td class="labels">PCP:</td>
                   <td>
                     <select id="pcp" name="pcp">
+                      <option value="none" selected disable hidden></option>
                       <option value="vivek">Vivek</option>
                       <option value="raj">Raj</option>
                       <option value="krunal">Krunal</option>
@@ -327,6 +319,7 @@
                   <td class="labels">Fee Schedule:</td>
                   <td>
                     <select id="feeschedule" name="feeschedule">
+                      <option value="none" selected disable hidden></option>
                       <option value="today">Today</option>
                       <option value="tomorrow">Tomorrow</option>
                       <option value="yesterday">Yesterday</option>
@@ -339,7 +332,139 @@
   
           <div class="container">
             <div class="contactdetailheader">Contact Details<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
-            <div class="lightFont">Please set the preferences after adding the contact information, the section to set preference can be found below the contact section of the page.</div>
+            <div class="lightFont blackcolor">Please set the preferences after adding the contact information, the section to set preference can be found below the contact section of the page.</div>
+            <div class="containercontactdetail">
+                <div class="contactdetailoutercontainer">
+                <fieldset>
+                  <legend class="inputfeildonezero">
+                    <select id="addresstype" name="addresstype">
+                      <option value="home">Home</option>
+                      <option value="other">Other</option>
+                      <option value="work">Work</option>
+                    </select>
+                  </legend>
+                  <div class="detailcontiner">
+                    <div class="detailocntinertrash boldfont blackcolor">Address<span><i class="fa-solid fa-trash-can"></i></span></div>
+                    <div class="nestedinnercontiner">
+                      <div>Street</div>
+                      <div class="singlefeildinput"><input type="text" name=""></div>
+                    </div>
+                    <div class="innercontiner">
+                      <div class="addressfeilds addressfeildinputforsecondcolumn">
+                        <label>Zip</label>
+                        <input type="text" name="zip">
+                      </div>
+                      <div class="addressfeilds addressfeildinputforsecondcolumn">
+                        <label>City</label>
+                        <input type="text" name="city">
+                      </div>
+                      <div class="addressfeilds addressfeildinputforsecondcolumn">
+                        <label>State</label>
+                        <select id="state" name="state">
+                          <option value="alabama">Alabama</option>
+                          <option value="alaska">Alaska</option>
+                          <option value="arizona">Arizona</option>
+                        </select>
+                      </div>
+                      <div class="addressfeilds addressfeildinputforsecondcolumn">
+                        <label>Country</label>
+                        <select id="country" name="country">
+                          <option value="us">US</option>
+                          <option value="pr">PR</option>
+                          <option value="af">AF</option>
+                        </select>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-trash-can"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="detailcontiner">
+                    <div class="boldfont blackcolor">Phone<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+                    <div class="innercontiner">
+                      <div class="addressfeilds inputfeildtwozero inoutfeildpadding">
+                        <label>Type</label>
+                      </div>
+                      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+                        <label>Code</label>
+                      </div>
+                      <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+                        <label>Number</label>
+                      </div>
+                      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+                        <label>Ext</label>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="innercontiner">
+                      <div class="addressfeilds inputfeildtwozero inoutfeildpadding">
+                        <input type="text" name="type">
+                      </div>
+                      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+                        <input type="text" name="code">
+                      </div>
+                      <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+                        <input type="text" name="number">
+                      </div>
+                      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+                      </div>
+                      <div>
+                        <a><i class="fa-solid fa-trash-can"></i></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="detailcontiner">
+                    <div class="boldfont blackcolor">Fax<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+                    <div class="innercontiner">
+                      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+                        <label>Code</label>
+                      </div>
+                      <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+                        <label>Number</label>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="innercontiner">
+                      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+                        <input type="text" name="code">
+                      </div>
+                      <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+                        <input type="text" name="number">
+                      </div>
+                      <div>
+                        <a><i class="fa-solid fa-trash-can"></i></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="detailcontiner">
+                    <div class="boldfont blackcolor">Email<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+                    <div class="innercontiner">
+                      <div class="singlefeildinput inoutfeildpadding">
+                        <input type="text" name="email">
+                      </div>
+                      <div>
+                        <a><i class="fa-solid fa-trash-can"></i></a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="detailcontiner">
+                    <div class="boldfont blackcolor">Website<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+                    <div class="innercontiner">
+                      <div class="singlefeildinput inoutfeildpadding">
+                        <input type="text" name="website">
+                      </div>
+                      <div>
+                        <a><i class="fa-solid fa-trash-can"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                </div>    
+            </div>
           </div>
   
           <div class="container">
@@ -387,21 +512,33 @@
               </tr>
               <tr>
                 <td class="boldfont">Preferred Comm.</td>
-                <td colspan="3"></td>
-                <td colspan="2"></td>
+                <td colspan="3" class="bottomtypefeild"><span class="bottomtwofeild">Type:</span><span>
+                  <select id="type" name="type">
+                    <option value="none" selected disable hidden></option>
+                    <option value="email">Email</option>
+                    <option value="fax">Fax</option>
+                  </select>
+                </span></td>
+                <td colspan="2" class="bottomvaluefeild"><span class="bottomtwofeild">Value:</span><span>
+                  <select id="value" name="value">
+                    <option value="none" selected disable hidden></option>
+                    <option value="unknown">Unknown</option>
+                  </select>
+                </span></td>
               </tr>
             </table>
           </div>
   
           <div class="container">
             <div class="contactdetailheader"><span><i class="fa-solid fa-circle-chevron-down contactdetailheadericon"></i>Other Details</span></div>
-              <div class="flex-container">
+            <div class="flex-container" id="otherDetails">
                 <div class="flex-item">
                   <table class="patient-section-one-tables">
                     <tr>
                       <td class="labels">Employment:</td>
                       <td>
                         <select id="employment" name="employment">
+                          <option value="none" selected disable hidden></option>
                           <option value="fulltimeemployed">Full time employed</option>
                           <option value="parttimeemployed">Part time employed</option>
                           <option value="unemployed">Unemployed</option>
@@ -428,6 +565,7 @@
                       <td class="labels">Citizenship:</td>
                       <td>
                         <select id="citizenship" name="citizenship">
+                          <option value="none" selected disable hidden></option>
                           <option value="american">American</option>
                           <option value="indian">indian</option>
                         </select>
@@ -445,6 +583,7 @@
                       <td class="labels">Gender Identity:</td>
                       <td>
                         <select id="genderidentity" name="genderidentity">
+                          <option value="none" selected disable hidden></option>
                           <option value="male">Male</option>
                           <option value="female">female</option>
                           <option value="unknown">UnKnown</option>
@@ -455,6 +594,7 @@
                       <td class="labels">Referral Source:</td>
                       <td>
                         <select id="referralsource" name="referralsource">
+                          <option value="none" selected disable hidden></option>
                           <option value="vivekhospital">Vivek hospital</option>
                           <option value="surathospital">Surat hospital</option>
                         </select>
@@ -476,6 +616,7 @@
                       <td class="labels">Religion:</td>
                       <td>
                         <select id="religion" name="religion">
+                          <option value="none" selected disable hidden></option>
                           <option value="christian">Christian: American Baptist Church</option>
                           <option value="hindu">hindu</option>
                         </select>
@@ -489,6 +630,7 @@
                       <td class="labels">Sexual Orientation:</td>
                       <td>
                         <select id="sexualorientation" name="sexualorientation">
+                          <option value="none" selected disable hidden></option>
                           <option value="bisexual">Bisexual</option>
                           <option value="heterosexual">Heterosexual</option>
                           <option value="homosexual">Homosexual</option>
@@ -507,6 +649,7 @@
                       <td class="labels">Veteran Military Status:</td>
                       <td>
                         <select id="veteranmilitarystatus" name="veteranmilitarystatus">
+                          <option value="none" selected disable hidden></option>
                           <option value="norecord">norecord</option>
                         </select>
                       </td>
@@ -515,6 +658,7 @@
                       <td class="labels">Nationality:</td>
                       <td>
                         <select id="Nationality" name="Nationality">
+                          <option value="none" selected disable hidden></option>
                           <option value="american">american</option>
                         </select>
                       </td>
@@ -531,17 +675,6 @@
         </div>
       </form>
     </div>
-
-    <script>
-        function openSideMenu() {
-            document.getElementById('side-menu').style.width = '250px';
-            document.getElementById('main').style.marginLeft = '250px';
-        }
-        function closeSideMenu() {
-            document.getElementById('side-menu').style.width = '30px';
-            document.getElementById('main').style.marginLeft = '0';
-        }
-    </script>
     <script src="../Scripts/index.js"></script>
 </body>
 </html>
