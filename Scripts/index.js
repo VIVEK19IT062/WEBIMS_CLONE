@@ -70,13 +70,11 @@ function sideMenuOpenclose() {
 }
 
 function otherDetails() {
-    if(!tracksidebar){
-        document.getElementById('side-menu').style.width = '195px';
-        document.getElementById('main').style.marginLeft = '180px';
-        tracksidebar = !tracksidebar;
+    if(!trackOtherDetails){
+        document.getElementById('otherdetails').style.height = "100%" ;
+        trackOtherDetails = !trackOtherDetails;
     }else{
-        document.getElementById('side-menu').style.width = '20px';
-        document.getElementById('main').style.marginLeft = '20px';
-        tracksidebar = !tracksidebar;
+        document.getElementById('otherdetails').style.height = "10%" ;
+        trackOtherDetails = !trackOtherDetails;
     }
 }
