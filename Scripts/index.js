@@ -2,7 +2,7 @@ const btn = document.querySelector('#patientDetailsSubmit');
 const form = document.querySelector('#patientDetailForm');
 const resetBtn = document.querySelector('#patientDetailReset');
 let tracksidebar = true;
-let trackOtherDetails = true;
+let trackOtherDetails = false;
 
 btn.addEventListener('click', (e) => {
 
@@ -60,7 +60,7 @@ function findAge(date)
 function sideMenuOpenclose() {
     if(!tracksidebar){
         document.getElementById('side-menu').style.width = '195px';
-        document.getElementById('main').style.marginLeft = '180px';
+        document.getElementById('main').style.marginLeft = '205px';
         tracksidebar = !tracksidebar;
     }else{
         document.getElementById('side-menu').style.width = '20px';
@@ -69,12 +69,162 @@ function sideMenuOpenclose() {
     }
 }
 
-function otherDetails() {
-    if(!trackOtherDetails){
-        document.getElementById('otherdetails').style.height = "100%" ;
+function otherDetailsOpenclose() {
+    if(!trackOtherDetails){ 
+        document.getElementById('otherd-details-button').className = "fa-solid fa-circle-chevron-down contactdetailheadericon";
+        document.getElementById('otherDetails').style.display = 'flex' ;
         trackOtherDetails = !trackOtherDetails;
     }else{
-        document.getElementById('otherdetails').style.height = "10%" ;
+        document.getElementById('otherd-details-button').className = "fa-solid fa-circle-chevron-right contactdetailheadericon";
+        document.getElementById('otherDetails').style.display = 'none' ;
         trackOtherDetails = !trackOtherDetails;
     }
+}
+
+function addContactDetailsComponent () {
+    document.querySelector('#other-details-component').insertAdjacentHTML(
+      'beforeend',
+      `<div class="contactdetailoutercontainer" id="add-other-details-component">
+      <fieldset>
+        <legend class="inputfeildonezero">
+          <select id="addresstype" name="addresstype">
+            <option value="home">Home</option>
+            <option value="other">Other</option>
+            <option value="work">Work</option>
+          </select>
+        </legend>
+        
+        <div class="detailcontiner">
+          <div class="detailcontinertrash boldfont blackcolor">Address<span onclick="ContactDetailsComponent()"><i class="fa-solid fa-trash-can"></i></span></div>
+          <div class="nestedinnercontiner">
+            <div>Street</div>
+            <div class="singlefeildinput"><input type="text" name=""></div>
+          </div>
+          <div class="innercontiner">
+            <div class="addressfeilds addressfeildinputforsecondcolumn">
+              <label>Zip</label>
+              <input type="text" name="zip">
+            </div>
+            <div class="addressfeilds addressfeildinputforsecondcolumn">
+              <label>City</label>
+              <input type="text" name="city">
+            </div>
+            <div class="addressfeilds addressfeildinputforsecondcolumn">
+              <label>State</label>
+              <select id="state" name="state">
+                <option value="alabama">Alabama</option>
+                <option value="alaska">Alaska</option>
+                <option value="arizona">Arizona</option>
+              </select>
+            </div>
+            <div class="addressfeilds addressfeildinputforsecondcolumn">
+              <label>Country</label>
+              <select id="country" name="country">
+                <option value="us">US</option>
+                <option value="pr">PR</option>
+                <option value="af">AF</option>
+              </select>
+            </div>
+            <div>
+              <i class="fa-solid fa-trash-can"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailcontiner">
+          <div class="boldfont blackcolor">Phone<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+          <div class="innercontiner">
+            <div class="addressfeilds inputfeildtwozero inoutfeildpadding">
+              <label>Type</label>
+            </div>
+            <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+              <label>Code</label>
+            </div>
+            <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+              <label>Number</label>
+            </div>
+            <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+              <label>Ext</label>
+            </div>
+          </div>
+          <hr>
+          <div class="innercontiner">
+            <div class="addressfeilds inputfeildtwozero inoutfeildpadding">
+              <select id="type" name="type">
+                <option value="call">Call</option>
+                <option value="landline">Landline</option>
+              </select>
+            </div>
+            <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+              <select id="code" name="code">
+                <option value="+1 unitied states">+1 Unitied States</option>
+                <option value="+1 puerto rico">+1 Puerto Rico</option>
+              </select>
+            </div>
+            <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+              <input type="text" name="number" placeholder="Number">
+            </div>
+            <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+              <input type="text" name="ext." placeholder="Ext.">
+            </div>
+            <div>
+              <a><i class="fa-solid fa-trash-can"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailcontiner">
+          <div class="boldfont blackcolor">Fax<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+          <div class="innercontiner">
+            <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+              <label>Code</label>
+            </div>
+            <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+              <label>Number</label>
+            </div>
+          </div>
+          <hr>
+          <div class="innercontiner">
+            <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+              <input type="text" name="code">
+            </div>
+            <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+              <input type="text" name="number" placeholder="Number">
+            </div>
+            <div>
+              <a><i class="fa-solid fa-trash-can"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailcontiner">
+          <div class="boldfont blackcolor">Email<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+          <div class="innercontiner">
+            <div class="singlefeildinput inoutfeildpadding">
+              <input type="text" name="email">
+            </div>
+            <div>
+              <a><i class="fa-solid fa-trash-can"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="detailcontiner">
+          <div class="boldfont blackcolor">Website<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+          <div class="innercontiner">
+            <div class="singlefeildinput inoutfeildpadding">
+              <input type="text" name="website">
+            </div>
+            <div>
+              <a><i class="fa-solid fa-trash-can"></i></a>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+       </div>  `      
+    )
+}
+  
+function ContactDetailsComponent () {
+    document.querySelector('fieldset').parentNode.remove()
 }
