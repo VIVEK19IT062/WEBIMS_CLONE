@@ -386,8 +386,9 @@ i{
 .patient-section-three-table input{
   border: 0px;
   border-radius: 0px;
-  height: 98%;
-  width: 98%;
+  height: 90%;
+  width: 97.5%;
+  background: transparent;
 }
 
 .bottomtypefeild{

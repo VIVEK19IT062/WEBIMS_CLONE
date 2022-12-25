@@ -131,8 +131,8 @@ function addContactDetailsComponent () {
           </div>
         </div>
 
-        <div class="detailcontiner">
-          <div class="boldfont blackcolor">Phone<span><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+        <div class="detailcontiner" id="add-phone-details-component">
+          <div class="boldfont blackcolor">Phone<span onclick="addPhoneDetailsComponent()"><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
           <div class="innercontiner">
             <div class="addressfeilds inputfeildtwozero inoutfeildpadding">
               <label>Type</label>
@@ -148,27 +148,27 @@ function addContactDetailsComponent () {
             </div>
           </div>
           <hr>
-          <div class="innercontiner">
+          <div class="innercontiner" id="add-phone-component">
             <div class="addressfeilds inputfeildtwozero inoutfeildpadding">
-              <select id="type" name="type">
+                <select id="type" name="type">
                 <option value="call">Call</option>
                 <option value="landline">Landline</option>
-              </select>
+                </select>
             </div>
             <div class="addressfeilds inputfeildonezero inoutfeildpadding">
-              <select id="code" name="code">
+                <select id="code" name="code">
                 <option value="+1 unitied states">+1 Unitied States</option>
                 <option value="+1 puerto rico">+1 Puerto Rico</option>
-              </select>
+                </select>
             </div>
             <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
-              <input type="text" name="number" placeholder="Number">
+                <input type="text" name="number" placeholder="Number">
             </div>
             <div class="addressfeilds inputfeildonezero inoutfeildpadding">
-              <input type="text" name="ext." placeholder="Ext.">
+                <input type="text" name="ext." placeholder="Ext.">
             </div>
             <div>
-              <a><i class="fa-solid fa-trash-can"></i></a>
+                <a onClick="removeAddPhoneDetailsComponent()"><i class="fa-solid fa-trash-can"></i></a>
             </div>
           </div>
         </div>
@@ -227,4 +227,15 @@ function addContactDetailsComponent () {
   
 function ContactDetailsComponent () {
     document.querySelector('fieldset').parentNode.remove()
+}
+
+function addPhoneDetailsComponent () {
+    document.querySelector('#add-phone-details-component').insertAdjacentHTML(
+      'beforeend',
+      document.getElementById('add-phone-component').outerHTML     
+    )
+}
+
+function removeAddPhoneDetailsComponent () {
+    document.getElementById('add-phone-component').remove()
 }
