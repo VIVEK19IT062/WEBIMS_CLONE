@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <!-- navigation header -->
+    <!--...............navigation header...............-->
     <header>
       <nav class="navbar">
         <span class="open-slide">
@@ -64,9 +64,9 @@
       </nav>
     </header>
 
-    <!-- left sidebar -->
+    <!--...............left sidebar...............-->
     <div id="side-menu" class="side-nav-left">
-        <a href="#">Dashboard<span class="btn-close" onclick="sideMenuOpenclose()"><i class="fa-solid fa-arrow-right"></i></span></a>
+        <a href="#">Dashboard<span class="btn-close" onclick="sideMenuOpenclose()"><i class="fa-solid fa-chevron-left" id="arrow-btn"></i></span></a>
         <a href="#">Demographics</a>
         <a href="#">Insurance</a>
         <a href="#">Case</a>
@@ -96,7 +96,7 @@
         <a href="#">Ledger</a>
     </div>
 
-    <!-- right sidebar -->
+    <!--...............right sidebar...............-->
     <div class="side-nav-right">
       <a href="#"><i class="fa-sharp fa-solid fa-fax"></i>
         <span>4</span>
@@ -117,11 +117,11 @@
       <a href="#"><i class="fa-solid fa-note-sticky"></i></a>
     </div>
 
-    <!-- main content -->
+    <!--...............main content...............-->
     <div id="main">
       <form id="patientDetailForm">
 
-        <!-- top container of main content-->
+        <!--...............top container of main content...............-->
         <div class="top-continer">
           <span class="top-continer-checkbox"><input type="checkbox" name="" checked></i></span>
           <span class="top-continer-active-buttons">Active</span>
@@ -131,8 +131,10 @@
           <button class="top-continer-buttons top-continer-save-buttons-color" type="submit" id="patientDetailsSubmit"><span><i class="fa-solid fa-triangle-exclamation"></i></span>Save</button>
         </div>
   
+        <!--...............Bottom container of main content...............-->
         <div class="bottom-continer">
   
+          <!--...............Patient Details...............-->
           <div class="flex-container">
             <div class="flex-item">
                 <table class="patient-section-one-tables">
@@ -336,15 +338,135 @@
               </table>
             </div>
           </div>
-  
+
+          <!--...............Contact Details...............-->
           <div class="container">
             <div class="contactdetailheader">Contact Details<span onclick="addContactDetailsComponent()"><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
             <div class="lightFont blackcolor">Please set the preferences after adding the contact information, the section to set preference can be found below the contact section of the page.</div>
-            <div class="containercontactdetail" id="other-details-component">
-                            
+            <div class="containercontactdetail" id="contact-details-component">
+              <div class="contactdetailoutercontainer" id="add-contact-details-component">
+                <fieldset id="contact-details-fieldset-0">
+                  <legend class="inputfeildonezero">
+                    <select id="addresstype" name="addresstype">
+                      <option value="home">Home</option>
+                      <option value="other">Other</option>
+                      <option value="work">Work</option>
+                    </select>
+                  </legend>
+                  
+                  <div class="detailcontiner">
+                    <div class="detailcontinertrash boldfont blackcolor">Address<span onclick="addAddressDetailsComponent(this)"><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span><span onclick="removeContactDetailsComponent(this)" class="removeContact"><i class="fa-solid fa-trash-can"></i></span></div>
+                    <div class="nestedinnercontiner">
+                      <div>Street</div>
+                      <div class="singlefeildinput"><input type="text" name="street"></div>
+                    </div>
+                    <div class="innercontiner" id="add-address-component">
+                      <div class="addressfeilds addressfeildinputforsecondcolumn">
+                        <label>Zip</label>
+                        <input type="text" name="zip">
+                      </div>
+                      <div class="addressfeilds addressfeildinputforsecondcolumn">
+                        <label>City</label>
+                        <input type="text" name="city">
+                      </div>
+                      <div class="addressfeilds addressfeildinputforsecondcolumn">
+                        <label>State</label>
+                        <select id="state" name="state">
+                          <option value="alabama">Alabama</option>
+                          <option value="alaska">Alaska</option>
+                          <option value="arizona">Arizona</option>
+                        </select>
+                      </div>
+                      <div class="addressfeilds addressfeildinputforsecondcolumn">
+                        <label>Country</label>
+                        <select id="country" name="country">
+                          <option value="us">US</option>
+                          <option value="pr">PR</option>
+                          <option value="af">AF</option>
+                        </select>
+                      </div>
+                      <div onclick="removeAddressDetailsComponent(this)">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="detailcontiner" id="add-phone-details-component">
+                    <div class="boldfont blackcolor">Phone<span onclick="addPhoneDetailsComponent(this)"><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+                    <div class="innercontiner">
+                      <div class="addressfeilds inputfeildtwozero inoutfeildpadding">
+                        <label>Type</label>
+                      </div>
+                      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+                        <label>Code</label>
+                      </div>
+                      <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+                        <label>Number</label>
+                      </div>
+                      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+                        <label>Ext</label>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="innercontiner" id="add-phone-component">
+                      <div class="addressfeilds inputfeildtwozero inoutfeildpadding">
+                          <select id="type" name="type">
+                          <option value="call">Call</option>
+                          <option value="landline">Landline</option>
+                          </select>
+                      </div>
+                      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+                          <select id="code" name="code">
+                          <option value="+1 unitied states">+1 Unitied States</option>
+                          <option value="+1 puerto rico">+1 Puerto Rico</option>
+                          </select>
+                      </div>
+                      <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+                          <input type="text" name="number" placeholder="Number">
+                      </div>
+                      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+                          <input type="text" name="ext." placeholder="Ext.">
+                      </div>
+                      <div>
+                          <a onClick="removeAddPhoneDetailsComponent(this)"><i class="fa-solid fa-trash-can"></i></a>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="detailcontiner" id="add-fax-details-component">
+                    <div class="boldfont blackcolor">Fax<span onclick="addFaxDetailsComponent(this)"><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+                    <div class="innercontiner">
+                      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
+                        <label>Code</label>
+                      </div>
+                      <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+                        <label>Number</label>
+                      </div>
+                    </div>
+                    <hr>
+                  </div>
+          
+                  <div class="detailcontiner" id="add-email-details-component">
+                    <div class="boldfont blackcolor">Email<span onclick="addEmailDetailsComponent(this)"><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+                    <div class="innercontiner" id="add-email-component">
+                      <div class="singlefeildinput inoutfeildpadding">
+                        <input type="text" name="email">
+                      </div>
+                      <div>
+                        <a onclick="removeAddEmailDetailsComponent(this)"><i class="fa-solid fa-trash-can"></i></a>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="detailcontiner" id="add-website-details-component">
+                    <div class="boldfont blackcolor">Website<span onclick="addWebsiteDetailsComponent(this)"><i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span></div>
+                  </div>
+                </fieldset>
+              </div>             
             </div>
           </div>
-  
+
+          <!--...............Contact Preference...............-->
           <div class="container">
             <div class="contactdetailheader">Contact Preference</div>
             <table  class="patient-section-three-table">
@@ -406,7 +528,8 @@
               </tr>
             </table>
           </div>
-  
+
+          <!--...............Other Details...............-->
           <div class="container">
             <div class="contactdetailheader"><span onclick=otherDetailsOpenclose()><i class="fa-solid fa-circle-chevron-down contactdetailheadericon" id="otherd-details-button"></i>Other Details</span></div>
             <div class="flex-container otherDetails" id="otherDetails">
