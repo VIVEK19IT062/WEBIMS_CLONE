@@ -144,9 +144,25 @@ let websiteDetailsComponent = `<div class="innercontiner" id="add-website-compon
   <a onclick="removeAddWebsiteDetailsComponent(this)"><i class="fa-solid fa-trash-can"></i></a>
 </div>
 </div>`;
+//........................................................
 
 let tracksidebar = true;
 let trackOtherDetails = false;
+
+const input = document.getElementById("fname");
+input.addEventListener('change', (e) => {
+  const isValid = e.target.checkValidity();
+  console.log(isValid);
+  document.getElementById("error").innerHTML = ""
+    if (input.value == "") {
+      document.getElementById("error").innerHTML = "Please select a color"
+      return false 
+    }
+    else
+    {
+      return true
+    }
+});
 
 //...............Form submit...............
 btn.addEventListener('click', (e) => {
@@ -178,6 +194,7 @@ btn.addEventListener('click', (e) => {
         pcp : document.getElementById("pcp").value,
         feeschedule : document.getElementById("feeschedule").value,
     };
+
     const formData = new FormData(form);
     const values = [...formData.entries()];
     console.log(values);
@@ -188,11 +205,15 @@ btn.addEventListener('click', (e) => {
     }
 
 });
+//.........................................
+
 
 //...............Reset Form...............
 resetBtn.addEventListener('click',(e)=>{
     form.reset();
 })
+//........................................
+
 
 //...............Find Age...............
 function findAge(date) 
@@ -203,6 +224,8 @@ function findAge(date)
   const age = Math.floor(diff / (1000 * 60 * 60 * 24 * 365)); 
   return age;
 }
+//......................................
+
 
 //...............Side Menu Bar...............
 function sideMenuOpenclose() {
@@ -213,11 +236,12 @@ function sideMenuOpenclose() {
         tracksidebar = !tracksidebar;
     }else{
         document.getElementById('side-menu').style.width = '20px';
-        document.getElementById('main').style.marginLeft = '20px';
+        document.getElementById('main').style.marginLeft = '37px';
         document.getElementById('arrow-btn').className = "fa-solid fa-chevron-right";
         tracksidebar = !tracksidebar;
     }
 }
+//...........................................
 
 //...............Other Details...............
 function otherDetailsOpenclose() {
@@ -231,6 +255,8 @@ function otherDetailsOpenclose() {
         trackOtherDetails = !trackOtherDetails;
     }
 }
+//...........................................
+
 
 //...............Contact Details...............
 function addContactDetailsComponent () {
@@ -243,6 +269,8 @@ function addContactDetailsComponent () {
 function removeContactDetailsComponent (e) {
     e.parentElement.parentElement.parentElement.parentElement.remove();
 }
+//.............................................
+
 
 //...............Add Phone Input Component...............
 function addPhoneDetailsComponent (e) {
@@ -255,6 +283,8 @@ function addPhoneDetailsComponent (e) {
 function removeAddPhoneDetailsComponent (e) {
     e.parentElement.parentElement.remove();
 }
+//.......................................................
+
 
 //...............Add Fax Input Component...............
 function addFaxDetailsComponent (e) {
@@ -267,6 +297,8 @@ function addFaxDetailsComponent (e) {
 function removeAddFaxDetailsComponent (e) {
     e.parentElement.parentElement.remove();
 }
+//.....................................................
+
 
 //...............Add Email Input Component...............
 function addEmailDetailsComponent (e) {
@@ -279,6 +311,8 @@ function addEmailDetailsComponent (e) {
 function removeAddEmailDetailsComponent (e) {
     e.parentElement.parentElement.remove();
 }
+//.......................................................
+
 
 //...............Add Website Input Component...............
 function addWebsiteDetailsComponent (e) {
@@ -291,6 +325,8 @@ function addWebsiteDetailsComponent (e) {
 function removeAddWebsiteDetailsComponent (e) {
     e.parentElement.parentElement.remove();
 }
+//.........................................................
+
 
 //...............Add Website Input Component...............
 function addAddressDetailsComponent (e) {
@@ -303,3 +339,4 @@ function addAddressDetailsComponent (e) {
 function removeAddressDetailsComponent (e) {
   e.parentElement.remove();
 }
+//.........................................................

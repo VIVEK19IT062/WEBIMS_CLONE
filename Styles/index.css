@@ -6,8 +6,15 @@ body {
   height: 100vh;
 }
 
+.blackcolor{
+  color: #000000;
+}
 
-/*...............Scrollbar...............*/
+i{
+  color:#486581;
+}
+
+/*...............Start Scrollbar...............*/
 ::-webkit-scrollbar{
   width: 6px;
   height: 4px;
@@ -34,16 +41,9 @@ body {
   background: #a4b8ca; 
   border-radius: 10px;
 }
+/*...............End Scrollbar...............*/
 
-.blackcolor{
-  color: #000000;
-}
-
-i{
-  color:#486581;
-} 
-
-/*...............Navigation Header...............*/
+/*...............Start Navigation Header...............*/
 .navbar {
   background-color: #ffffff;
   width: 100%;
@@ -114,8 +114,9 @@ i{
 .menu-icon {
   font-size: 25px;
 }
+/*...............End Navigation Header...............*/
 
-/*...............Left sidebar and right sidebar...............*/
+/*...............Start Left sidebar and right sidebar...............*/
 .side-nav-left {
   height: 89%;
   width: 195px;
@@ -175,8 +176,9 @@ i{
   color: #486581;
   transition: 0.3s;
 }
+/*...............End Left sidebar and right sidebar...............*/
 
-/*...............Main Content...............*/
+/*...............Start Main Content...............*/
 #main {
   transition: margin-left 0.5s;
   padding: 75px 15px 60px 25px;
@@ -188,8 +190,9 @@ i{
 #patientDetailForm{
   height: 100%;
 }
+/*...............End Main Content...............*/
 
-/*...............Top container of main content...............*/
+/*...............Start Top container of main content...............*/
 .top-continer{
   display: flex;
   right: 0;
@@ -210,13 +213,29 @@ i{
   margin: 0px 5px;
 }
 
-.top-continer-buttons-color{
+.top-continer-buttons-action{
   background-color: #ffffff;
+  cursor: pointer;
 }
 
-.top-continer-save-buttons-color{
+.top-continer-buttons-action:hover {
+  background-color:  #f2f2f3;
+}
+
+.top-continer-buttons-action:active {
+  background-color:  #d1d1d4;
+}
+
+.top-continer-save-buttons{
   background-color: #5a5fe2;
   color: #ffffff;
+  box-sizing: content-box;
+  cursor: pointer;
+}
+
+.top-continer-save-buttons:active {
+  border: 1px solid rgb(31, 15, 73);
+  background-color:  #8184e6;
 }
 
 .top-continer-menu-buttons{
@@ -234,16 +253,18 @@ i{
 .fa-triangle-exclamation{
   color: rgb(226, 133, 12);
 }
+/*...............End Top container of main content...............*/
 
-/*...............Bottom container of main content...............*/
+/*...............Start Bottom container of main content...............*/
 .bottom-continer{
   margin-top: 10px;
   overflow-y: scroll;
   height: 100%;
   padding: 5px;
 }
+/*...............End Bottom container of main content...............*/
 
-/*...............Patient Details...............*/
+/*...............Start Patient Details...............*/
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -252,13 +273,16 @@ i{
   justify-items: center;
   background: #ffffff;
   margin-bottom:20px;
-  border-radius: 10px;
   box-sizing: border-box;
   flex-direction: row;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 15%);
+  border-radius: 0.5rem;
 }
 
 .otherDetails{
   display: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .flex-item{
@@ -335,15 +359,17 @@ i{
   border-radius: 30px;
   box-sizing: border-box;
 }
+/*...............End Patient Details...............*/
 
-/*...............Contact Details...............*/
+/*...............Start Contact Details...............*/
 .container{
   background: #ffffff;
   margin-bottom:20px;
   color: #486581;
-  border-radius: 10px;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 15%);
+  border-radius: 0.5rem;
 }
 
 .contactheader {
@@ -354,8 +380,9 @@ i{
 .contactdetailheadericon {
   margin: 0px 5px 0px 5px;
 }
+/*...............End Contact Details...............*/
 
-/*...............Contact Details...............*/
+/*...............Start Contact Details...............*/
 .containercontactdetail{
   display: flex;
   color: #486581;
@@ -452,9 +479,9 @@ i{
 .fa-circle-plus{
   font-size: 16px;
 }
+/*...............End Contact Details...............*/
 
-/*...............Contact Preference...............*/
-
+/*...............Start Contact Preference...............*/
 .addresscontainerofcontactdetail{
   display: flex;
   flex: 1;
@@ -522,8 +549,9 @@ i{
   border-radius: 4px;
   box-sizing: border-box;
 }
+/*...............End Contact Preference...............*/
 
-/*...............Other Details...............*/
+/*...............Start Other Details...............*/
 .patient-section-three-table i {
   margin-left: 5px;
 }
@@ -561,14 +589,4 @@ i{
 .boldfont{
   font-weight: bold;
 }
-
-@media screen and (max-width: 992px) {
-  .flex-container {
-    flex-direction: column;
-    padding: 10px 0;
-  }
-
-  .flex-item{
-    padding: 0px;
-  }
-}
+/*...............End Other Details...............*/

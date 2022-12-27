@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--...............CSS...............-->
     <link rel="stylesheet" href="../Styles//index.css">
+    <link rel="stylesheet" href="../Styles//mediaQuery.css">
+
     <title>WebIMS Clone</title>
+
+    <!--...............Font Awesome...............-->
     <script src="https://kit.fontawesome.com/2cb6698122.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <!--...............navigation header...............-->
+    <!--...............Navigation header...............-->
     <header>
       <nav class="navbar">
         <span class="open-slide">
@@ -64,7 +70,7 @@
       </nav>
     </header>
 
-    <!--...............left sidebar...............-->
+    <!--...............Left sidebar...............-->
     <div id="side-menu" class="side-nav-left">
         <a href="#">Dashboard<span class="btn-close" onclick="sideMenuOpenclose()"><i class="fa-solid fa-chevron-left" id="arrow-btn"></i></span></a>
         <a href="#">Demographics</a>
@@ -96,7 +102,7 @@
         <a href="#">Ledger</a>
     </div>
 
-    <!--...............right sidebar...............-->
+    <!--...............Right sidebar...............-->
     <div class="side-nav-right">
       <a href="#"><i class="fa-sharp fa-solid fa-fax"></i>
         <span>4</span>
@@ -117,18 +123,18 @@
       <a href="#"><i class="fa-solid fa-note-sticky"></i></a>
     </div>
 
-    <!--...............main content...............-->
+    <!--...............Main content...............-->
     <div id="main">
       <form id="patientDetailForm">
 
-        <!--...............top container of main content...............-->
+        <!--...............Top container of main content...............-->
         <div class="top-continer">
           <span class="top-continer-checkbox"><input type="checkbox" name="" checked></i></span>
           <span class="top-continer-active-buttons">Active</span>
           <span class="top-continer-menu-buttons"><i class="fa-solid fa-ellipsis-vertical" ></i></i></span>
-          <button class="top-continer-buttons top-continer-buttons-color" type="verify" id="verify">Verify</span>
-          <button class="top-continer-buttons top-continer-buttons-color" id="patientDetailReset">Cancel Changes</button>
-          <button class="top-continer-buttons top-continer-save-buttons-color" type="submit" id="patientDetailsSubmit"><span><i class="fa-solid fa-triangle-exclamation"></i></span>Save</button>
+          <button class="top-continer-buttons top-continer-buttons-action" type="button">Verify</span></button>
+          <button class="top-continer-buttons top-continer-buttons-action" type="button" id="patientDetailReset">Cancel Changes</button>
+          <button class="top-continer-buttons top-continer-save-buttons" type="submit" id="patientDetailsSubmit"><span><i class="fa-solid fa-triangle-exclamation"></i></span>Save</button>
         </div>
   
         <!--...............Bottom container of main content...............-->
@@ -152,7 +158,8 @@
                   </tr>
                   <tr>
                     <td class="labels">First Name<span class="mandatory-feild">*</span>:</td>
-                    <td><input type="text" name="fname" id="fname"></td>
+                    <td><input type="text" name="fname" id="fname" required/></td>
+                    <!-- <p id="error">cccccc</p> -->
                   </tr>
                   <tr>
                     <td class="labels">Middle Name:</td>
@@ -160,7 +167,7 @@
                   </tr>
                   <tr>
                     <td class="labels">Last name:<span class="mandatory-feild">*</span></td>
-                    <td><input type="text" name="lname" id="lname"></td>
+                    <td><input type="text" name="lname" id="lname" required></td>
                   </tr>
                   <tr>
                     <td class="labels">Last name 2:</td>
@@ -181,7 +188,7 @@
                 <tr>
                   <td class="labels">Sex:<span class="mandatory-feild">*</span></td>
                   <td>
-                    <select id="sex" name="sex">
+                    <select id="sex" name="sex" required>
                       <option value="male">Male</option>
                       <option value="female">female</option>
                       <option value="unknown">UnKnown</option>
@@ -674,6 +681,9 @@
         
       </form>
     </div>
+
+    <!--...............Javascript...............-->
     <script src="../Scripts/index.js"></script>
+
 </body>
 </html>
