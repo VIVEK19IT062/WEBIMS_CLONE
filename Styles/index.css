@@ -361,7 +361,7 @@ i{
 }
 /*...............End Patient Details...............*/
 
-/*...............Start Contact Details...............*/
+/*...............Start Contact Container...............*/
 .container{
   background: #ffffff;
   margin-bottom:20px;
@@ -376,11 +376,7 @@ i{
   font-size: 18px;
   color: #486581;
 }
-
-.contactdetailheadericon {
-  margin: 0px 5px 0px 5px;
-}
-/*...............End Contact Details...............*/
+/*...............End Contact Container...............*/
 
 /*...............Start Contact Details...............*/
 .containercontactdetail{
@@ -413,6 +409,18 @@ i{
   display: flex;
   flex-flow: row wrap;
   margin: 8px 0;
+}
+
+.contactdetailheadericon {
+  margin: 0px 5px 0px 5px;
+}
+
+.addressAddComponentVisibilitiy{
+  visibility: hidden;
+}
+
+.address-add-component-visibilitiy{
+  display: none;
 }
 
 .detailcontinertrash .removeContact{
@@ -462,6 +470,10 @@ i{
 
 .inputfeildtwofive{
   width: 25%;
+}
+
+.inputfeildonefive{
+  width: 15%;
 }
 
 .singlefeildinput{

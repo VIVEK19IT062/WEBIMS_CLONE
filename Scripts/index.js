@@ -2,7 +2,13 @@ const btn = document.querySelector('#patientDetailsSubmit');
 const form = document.querySelector('#patientDetailForm');
 const resetBtn = document.querySelector('#patientDetailReset');
 
+let tracksidebar = true;
+let trackOtherDetails = false;
+
 //...............Contact Details Components...............
+let addressDetailsButtonComponent = `<span id="address-add-component" class="addressAddComponentVisibilitiy" onclick="addAddressDetailsComponent(this)">
+<i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span>`;
+let addressDetailsComponent = document.getElementById('addressComponent');
 let contactDetailsomponent = `<div class="contactdetailoutercontainer" id="add-contact-details-component">
 <fieldset id="contact-details-fieldset-0">
   <legend class="inputfeildonezero">
@@ -14,38 +20,41 @@ let contactDetailsomponent = `<div class="contactdetailoutercontainer" id="add-c
   </legend>
   
   <div class="detailcontiner">
-    <div class="detailcontinertrash boldfont blackcolor">Address<span onclick="removeContactDetailsComponent(this)" class="removeContact"><i class="fa-solid fa-trash-can"></i></span></div>
-    <div class="nestedinnercontiner">
-      <div>Street</div>
-      <div class="singlefeildinput"><input type="text" name="street"></div>
-    </div>
-    <div class="innercontiner" id="add-address-component">
-      <div class="addressfeilds addressfeildinputforsecondcolumn">
-        <label>Zip</label>
-        <input type="text" name="zip">
+    <div class="detailcontinertrash boldfont blackcolor">Address<span id="address-add-component" class="addressAddComponentVisibilitiy" onclick="addAddressDetailsComponent(this)">
+      <i class="fa-solid fa-circle-plus contactdetailheadericon"></i></span><span onclick="removeContactDetailsComponent(this)" class="removeContact"><i class="fa-solid fa-trash-can"></i></span></div>
+    <div id="addressComponent">
+      <div class="nestedinnercontiner">
+        <div>Street</div>
+        <div class="singlefeildinput"><input type="text" name="street"></div>
       </div>
-      <div class="addressfeilds addressfeildinputforsecondcolumn">
-        <label>City</label>
-        <input type="text" name="city">
-      </div>
-      <div class="addressfeilds addressfeildinputforsecondcolumn">
-        <label>State</label>
-        <select id="state" name="state">
-          <option value="alabama">Alabama</option>
-          <option value="alaska">Alaska</option>
-          <option value="arizona">Arizona</option>
-        </select>
-      </div>
-      <div class="addressfeilds addressfeildinputforsecondcolumn">
-        <label>Country</label>
-        <select id="country" name="country">
-          <option value="us">US</option>
-          <option value="pr">PR</option>
-          <option value="af">AF</option>
-        </select>
-      </div>
-      <div onclick="removeAddressDetailsComponent(this)">
-        <i class="fa-solid fa-trash-can"></i>
+      <div class="innercontiner" id="add-address-component">
+        <div class="addressfeilds addressfeildinputforsecondcolumn">
+          <label>Zip</label>
+          <input type="text" name="zip">
+        </div>
+        <div class="addressfeilds addressfeildinputforsecondcolumn">
+          <label>City</label>
+          <input type="text" name="city">
+        </div>
+        <div class="addressfeilds addressfeildinputforsecondcolumn">
+          <label>State</label>
+          <select id="state" name="state">
+            <option value="alabama">Alabama</option>
+            <option value="alaska">Alaska</option>
+            <option value="arizona">Arizona</option>
+          </select>
+        </div>
+        <div class="addressfeilds addressfeildinputforsecondcolumn">
+          <label>Country</label>
+          <select id="country" name="country">
+            <option value="us">US</option>
+            <option value="pr">PR</option>
+            <option value="af">AF</option>
+          </select>
+        </div>
+        <div onclick="removeAddressDetailsComponent(this)">
+          <i class="fa-solid fa-trash-can"></i>
+        </div>
       </div>
     </div>
   </div>
@@ -74,13 +83,13 @@ let contactDetailsomponent = `<div class="contactdetailoutercontainer" id="add-c
           <option value="landline">Landline</option>
           </select>
       </div>
-      <div class="addressfeilds inputfeildonezero inoutfeildpadding">
-          <select id="code" name="code">
+      <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+        <select id="code" name="code">
           <option value="+1 unitied states">+1 Unitied States</option>
           <option value="+1 puerto rico">+1 Puerto Rico</option>
           </select>
       </div>
-      <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
+     <div class="addressfeilds inputfeildtwofive inoutfeildpadding">
           <input type="text" name="number" placeholder="Number">
       </div>
       <div class="addressfeilds inputfeildonezero inoutfeildpadding">
@@ -145,24 +154,6 @@ let websiteDetailsComponent = `<div class="innercontiner" id="add-website-compon
 </div>
 </div>`;
 //........................................................
-
-let tracksidebar = true;
-let trackOtherDetails = false;
-
-const input = document.getElementById("fname");
-input.addEventListener('change', (e) => {
-  const isValid = e.target.checkValidity();
-  console.log(isValid);
-  document.getElementById("error").innerHTML = ""
-    if (input.value == "") {
-      document.getElementById("error").innerHTML = "Please select a color"
-      return false 
-    }
-    else
-    {
-      return true
-    }
-});
 
 //...............Form submit...............
 btn.addEventListener('click', (e) => {
@@ -271,6 +262,20 @@ function removeContactDetailsComponent (e) {
 }
 //.............................................
 
+//...............Add Address Input Component...............
+function addAddressDetailsComponent (e) {
+  e.parentElement.parentElement.insertAdjacentHTML(
+    'beforeend',
+    addressDetailsComponent.outerHTML
+  );
+  e.style.visibility = 'hidden';
+}
+
+function removeAddressDetailsComponent (e) {
+  e.parentElement.parentElement.parentElement.childNodes[1].childNodes[1].style.visibility = 'visible';
+  e.parentElement.parentElement.remove();
+}
+//.........................................................
 
 //...............Add Phone Input Component...............
 function addPhoneDetailsComponent (e) {
@@ -324,19 +329,5 @@ function addWebsiteDetailsComponent (e) {
 
 function removeAddWebsiteDetailsComponent (e) {
     e.parentElement.parentElement.remove();
-}
-//.........................................................
-
-
-//...............Add Website Input Component...............
-function addAddressDetailsComponent (e) {
-  e.parentElement.parentElement.insertAdjacentHTML(
-    'beforeend',
-    AddressDetailsComponent.outerHTML   
-  );
-}
-
-function removeAddressDetailsComponent (e) {
-  e.parentElement.remove();
 }
 //.........................................................
