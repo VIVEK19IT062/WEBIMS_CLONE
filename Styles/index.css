@@ -235,7 +235,7 @@ i{
 
 .top-continer-save-buttons:active {
   border: 1px solid rgb(31, 15, 73);
-  background-color:  #8184e6;
+  background-color:  #6e71d3;
 }
 
 .top-continer-menu-buttons{
@@ -268,97 +268,14 @@ i{
 .flex-container {
   display: flex;
   flex-wrap: wrap;
-  color: #486581;
+  color:1px solid rgb(28, 17, 56);
   align-items: center;
   justify-items: center;
   background: #ffffff;
-  margin-bottom:20px;
   box-sizing: border-box;
   flex-direction: row;
-  box-shadow: 0 1px 2px rgb(0 0 0 / 15%);
-  border-radius: 0.5rem;
 }
 
-.otherDetails{
-  display: none;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-.flex-item{
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 1 1 0;
-  width: 0;
-}
-
-.patient-section-one-tables {
-	font-size : 12px;
-  width: 100%;
-}
-
-.mandatory-feild {
-  font-size: 22px;
-  color: rgb(248, 103, 0);
-}
-
-.patient-id{
-  font-size : 18px;
-  font-weight: bold;
-  color: #486581;
-}
-
-.patient-section-one-tables td > input[type=text],input[type=date],input[type=time],select{
-  height: 27px;
-  width: 75%;
-  min-width: 150px;
-  border: 1px solid #dddddf;
-  border-radius: 4px;
-  box-sizing: border-box;
-  padding-left: 5px;
-}
-
-.patient-section-one-tables td {
-  padding: .1rem .3rem ;
-  min-width: 150px
-}
-
-.patient-section-one-tables .labels{
-  text-align: right;
-  min-width: 120px;
-  width: 180px;
-  padding-right: 0px;
-  align-items: center;
-  height: 25px;
-}
-
-.patient-section-one-tables td textarea{
-  height: 50px;
-  width: 75%;
-  min-width: 150px;
-  padding: 0;
-  border: 1px solid #dddddf;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.patient-section-one-tables td input[type=checkbox] {
-  margin: 0px;
-  width: 20px;
-  height: 20px;
-  padding: 0;
-}
-
-.patient-section-one-tables td img {
-  display: flex;
-  height: 150px;
-  width: 150px;
-  border: 1px solid #dddddf;
-  border-radius: 30px;
-  box-sizing: border-box;
-}
 /*...............End Patient Details...............*/
 
 /*...............Start Contact Container...............*/
@@ -602,3 +519,57 @@ i{
   font-weight: bold;
 }
 /*...............End Other Details...............*/
+
+
+
+
+.btn {
+  background-color: #ffffff;
+  color: rebeccapurple;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.btn:focus {
+  outline: none;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+#toasts {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.toast {
+
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+}
+.toast.info {
+  color: rebeccapurple;
+}
+.toast.success {
+  background-color: black;
+}
+.toast.error {
+  color: red;
+}
+
+.messageType{
+  background-color: transparent;
+  border-radius: 5px;
+}
+
+.toastMessage{
+  background-color: transparent;
+  border-radius: 5px;
+}

@@ -331,3 +331,46 @@ function removeAddWebsiteDetailsComponent (e) {
     e.parentElement.parentElement.remove();
 }
 //.........................................................
+
+const button = document.getElementById('button')
+const toasts = document.getElementById('toasts')
+const messages = [
+  'Message One',
+  'Message Two',
+  'Message Three',
+  'Message Four',
+]
+const types = ['info', 'success', 'error']
+
+function createNotification(message = null, type = null) {
+  
+  //Container div
+  const divContainer = document.createElement("div");
+  divContainer.classList.add("toast");
+  toasts.appendChild(divContainer);
+  divContainer.classList.add('success');
+  // 2 Divs in container
+  const divWord = document.createElement("div");
+  const divDef = document.createElement("div");
+
+  divWord.classList.add("messageType");
+  divDef.classList.add("toastMessage");
+  divWord.innerHTML = "success";
+  divDef.innerHTML = "error";
+
+  divContainer.appendChild(divWord);
+  divContainer.appendChild(divDef);
+
+  toasts.appendChild(divContainer)
+    setTimeout(() => {
+      divContainer.remove()
+  }, 3000)
+
+}
+
+function getRandomMessage() {
+return messages[Math.floor(Math.random() * messages.length)]
+}
+function getRandomType() {
+return types[Math.floor(Math.random() * types.length)]
+}

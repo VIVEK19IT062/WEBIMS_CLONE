@@ -7,6 +7,7 @@
     <!--...............CSS...............-->
     <link rel="stylesheet" href="../Styles//index.css">
     <link rel="stylesheet" href="../Styles//mediaQuery.css">
+    <link rel="stylesheet" href="../Styles//flex.css">
 
     <title>WebIMS Clone</title>
 
@@ -15,6 +16,13 @@
 </head>
 <body>
 
+
+   
+  <div id="toasts">
+    
+  </div>
+
+  <button class="btn" id="button" onclick="createNotification()">Show Notifiddddddddddddddddddddddddddddddddddddddddddddddddddddcation</button>
     <!--...............Navigation header...............-->
     <header>
       <nav class="navbar">
@@ -122,6 +130,9 @@
       <a href="#"><i class="fa-solid fa-clipboard"></i></a>
       <a href="#"><i class="fa-solid fa-note-sticky"></i></a>
     </div>
+
+    
+
 
     <!--...............Main content...............-->
     <div id="main">
@@ -539,149 +550,389 @@
             </table>
           </div>
 
-          <!--...............Other Details...............-->
+          <!--...............Patient Details...............-->
           <div class="container">
-            <div class="contactdetailheader"><span onclick=otherDetailsOpenclose()><i class="fa-solid fa-circle-chevron-down contactdetailheadericon" id="otherd-details-button"></i>Other Details</span></div>
-            <div class="flex-container otherDetails" id="otherDetails">
-                <div class="flex-item">
-                  <table class="patient-section-one-tables">
-                    <tr>
-                      <td class="labels">Employment:</td>
-                      <td>
-                        <select id="employment" name="employment">
-                          <option value="none" selected disable hidden></option>
-                          <option value="fulltimeemployed">Full time employed</option>
-                          <option value="parttimeemployed">Part time employed</option>
-                          <option value="unemployed">Unemployed</option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="labels">First Called Date:</td>
-                      <td><input type="date" name=””></td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Deceased Time:</td>
-                      <td><input type="time" name=””></td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Mother's Last Name:</td>
-                      <td><input type="text" name=””></td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Birth Place:</td>
-                      <td><input type="text" name=””></td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Citizenship:</td>
-                      <td>
-                        <select id="citizenship" name="citizenship">
-                          <option value="american">American</option>
-                          <option value="indian">indian</option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Note:</td>
-                      <td><textarea id="note" name="note" rows="4" cols="50"></textarea></td>
-                    </tr>
-                  </table>
+            <div class="flex-container">
+              <div id="shelfcontainer">
+                <div class="shelf">
+                  <div class="labelbox"></div>
+                  <div class="valuebox"><img src="../assests/photo.jpg" alt="Italian Trulli"></div>
                 </div>
-                <div class="flex-item">
-                  <table class="patient-section-one-tables">
-                    <tr>
-                      <td class="labels">Gender Identity:</td>
-                      <td>
-                        <select id="genderidentity" name="genderidentity">
-                          <option value="none" selected disable hidden></option>
-                          <option value="male">Male</option>
-                          <option value="female">female</option>
-                          <option value="unknown">UnKnown</option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Referral Source:</td>
-                      <td>
-                        <select id="referralsource" name="referralsource">
-                          <option value="vivekhospital">Vivek hospital</option>
-                          <option value="surathospital">Surat hospital</option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Mother's Maiden:</td>
-                      <td><input type="text" name="mothersmaiden"></td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Mother Identifier</td>
-                      <td><input type="text" name="motheridentifier"></td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Multiple Birth:</td>
-                      <td><input type="checkbox" name="multiplebirth"></td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Religion:</td>
-                      <td>
-                        <select id="religion" name="religion">
-                          <option value="none" selected disable hidden></option>
-                          <option value="christian">Christian: American Baptist Church</option>
-                          <option value="hindu">hindu</option>
-                        </select>
-                      </td>
-                    </tr>
-                  </table>
+
+                <div class="shelf">
+                  <div class="labelbox"></div>
+                  <div class="valuebox patient-id" id="pid">000</div>
                 </div>
-                <div class="flex-item">
-                  <table class="patient-section-one-tables">
-                    <tr>
-                      <td class="labels">Sexual Orientation:</td>
-                      <td>
-                        <select id="sexualorientation" name="sexualorientation">
-                          <option value="none" selected disable hidden></option>
-                          <option value="bisexual">Bisexual</option>
-                          <option value="heterosexual">Heterosexual</option>
-                          <option value="homosexual">Homosexual</option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Deceased:</td>
-                      <td><input type="checkbox" name="deceased"></td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Mother's Middle Name</td>
-                      <td><input type="text" name="mothersmiddlename"></td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Veteran Military Status:</td>
-                      <td>
-                        <select id="veteranmilitarystatus" name="veteranmilitarystatus">
-                          <option value="none" selected disable hidden></option>
-                          <option value="norecord">norecord</option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Nationality:</td>
-                      <td>
-                        <select id="Nationality" name="Nationality">
-                          <option value="american">american</option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="labels">Driver's License:</td>
-                      <td><input type="text" name=””></td>
-                    </tr>
-                  </table>
+
+                <div class="shelf">
+                    <div class="labelbox">Prefix:</div>
+                    <div class="valuebox"><input type="text" name="prefix" id="prefix"></div>
                 </div>
+            
+                <div class="shelf">
+                    <div class="labelbox">First Name:<span class="mandatory-feild">*</span>:</div>
+                    <div class="valuebox"><input type="text" name="fname" id="fname" required /></div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">Middle Name:</div>
+                  <div class="valuebox"><input type="text" name="mname" id="mname"></div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">Last name:<span class="mandatory-feild">*</span>:</div>
+                  <div class="valuebox"><input type="text" name="lname" id="lname" required></div>
+                </div>
+                
+                <div class="shelf">
+                  <div class="labelbox">Last name 2:</div>
+                  <div class="valuebox"><input type="text" name="lname2" id="lname2"></div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">Suffix:</div>
+                  <div class="valuebox"><input type="text" name="suffix" id="suffix"></div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">AKA:</div>
+                  <div class="valuebox"><input type="text" name="aka" id="aka"></div>
+                </div>
+              </div>
+              
+              <div id="shelfcontainer">
+                <div class="shelf">
+                  <div class="labelbox">Sex:<span class="mandatory-feild">*</span></div>
+                  <div class="valuebox">
+                    <select id="sex" name="sex" required>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Unknown">UnKnown</option>
+                  </select>
+                  </div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">DOB:</div>
+                  <div class="valuebox"><input type="date" name="dob" id="dob"></div>
+                </div>
+
+                <div class="shelf">
+                    <div class="labelbox">Pref language:</div>
+                    <div class="valuebox">
+                      <select id="preflanguage" name="preflanguage">
+                        <option value="english">English</option>
+                        <option value="gujarati">Gujarati</option>
+                        <option value="hindi">Hindi</option>
+                    </select>
+                    </div>
+                </div>
+            
+                <div class="shelf">
+                    <div class="labelbox">Interpreter:</div>
+                    <div class="valuebox"><input type="checkbox" name="interpreter" id="interpreter" value="Interpreter"></div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">Status:</div>
+                  <div class="valuebox">
+                    <select id="status" name="status">
+                      <option value="none" selected disable hidden></option>
+                      <option value="first">First</option>
+                      <option value="registration">Registration</option>
+                      <option value="immunizations">Immunizations</option>
+                  </select>
+                  </div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">Risk:</div>
+                  <div class="valuebox"><span><i class="fa-solid fa-circle-plus"></i>Add Risk</span></div>
+                </div>
+                
+                <div class="shelf">
+                  <div class="labelbox">Marital Status:</div>
+                  <div class="valuebox">
+                    <select id="maritalstatus" name="maritalstatus">
+                      <option value="married">Married</option>
+                      <option value="divorced">Divorced</option>
+                      <option value="annulled">Annulled</option>
+                  </select>
+                  </div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">SSN:</div>
+                  <div class="valuebox"><input type="text" name="ssn" id="ssn"></div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">Race:</div>
+                  <div class="valuebox">
+                    <select id="race" name="race">
+                      <option value="none" selected disable hidden></option>
+                      <option value="white">White</option>
+                      <option value="asian">Asian</option>
+                      <option value="black">Black</option>
+                  </select>
+                  </div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">Ethnicity:</div>
+                  <div class="valuebox">
+                    <select id="ethnicity" name="ethnicity">
+                      <option value="none" selected disable hidden></option>
+                      <option value="otherethnicity">Other Ethnicity</option>
+                      <option value=">hispaniclatino">Hispanic/Latino</option>
+                      <option value="nonhispaniclatino">Non-Hispanic/Latino</option>
+                  </select>
+                  </div>
+                </div>
+              </div>
+
+              <div id="shelfcontainer">
+                <div class="shelf">
+                  <div class="labelbox">Self Pay:</div>
+                  <div class="valuebox"><input type="checkbox" name="selfpay" id="selfpay" value="Self Pay:"></div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">Default Facility:</div>
+                  <div class="valuebox">
+                    <select id="defaultfacility" name="defaultfacility">
+                      <option value="white">White</option>
+                      <option value="asian">Asian</option>
+                      <option value="black">Black</option>
+                  </select>
+                  </div>
+                </div>
+
+                <div class="shelf">
+                    <div class="labelbox">Default Provider:</div>
+                    <div class="valuebox">
+                      <select id="defaultprovider" name="defaultprovider">
+                        <option value="white">White</option>
+                        <option value="asian">Asian</option>
+                        <option value="black">Black</option>
+                    </select>
+                    </div>
+                </div>
+            
+                <div class="shelf">
+                    <div class="labelbox">Timezone:</div>
+                    <div class="valuebox">
+                      <select id="timezone" name="timezone">
+                        <option value="UTC-10">UTC-10</option>
+                        <option value="UTC-09">UTC-09</option>
+                        <option value="UTC-08">UTC-08</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">Default Pharmacy:</div>
+                  <div class="valuebox">
+                    <select id="defaultpharmacy" name="defaultpharmacy">
+                      <option value="SU">SU</option>
+                      <option value="AH">AH</option>
+                      <option value="ND">ND</option>
+                  </select>
+                  </div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">Use current pharmacy for all Rx:</div>
+                  <div class="valuebox"><input type="checkbox" name="usecurrentpharmacyforallrx" id="usecurrentpharmacyforallrx" value="Use current pharmacy for all Rx:"></div>
+                </div>
+                
+                <div class="shelf">
+                  <div class="labelbox">PCP Same As Provider:</div>
+                  <div class="valuebox"><input type="checkbox" name="pcpsameasprovider" id="pcpsameasprovider" value="PCP Same As Provider"></div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">PCP:</div>
+                  <div class="valuebox">
+                    <select id="pcp" name="pcp">
+                      <option value="none" selected disable hidden></option>
+                      <option value="vivek">Vivek</option>
+                      <option value="raj">Raj</option>
+                      <option value="krunal">Krunal</option>
+                  </select>
+                  </div>
+                </div>
+
+                <div class="shelf">
+                  <div class="labelbox">Fee Schedule:</div>
+                  <div class="valuebox">
+                    <select id="feeschedule" name="feeschedule">
+                      <option value="none" selected disable hidden></option>
+                      <option value="today">Today</option>
+                      <option value="tomorrow">Tomorrow</option>
+                      <option value="yesterday">Yesterday</option>
+                  </select>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
   
-        </div>
+          <!--...............Other Details...............-->
+          <div class="container">
+            <div class="contactdetailheader"><span onclick=otherDetailsOpenclose()><i class="fa-solid fa-circle-chevron-down contactdetailheadericon" id="otherd-details-button"></i>Other Details</span></div>
+            <div class="flex-container" id="otherDetails">
+              <div id="shelfcontainer">
+                <div class="shelf">
+                  <div class="labelbox">Employment:</div>
+                  <div class="valuebox">
+                    <select id="employment" name="employment">
+                      <option value="none" selected disable hidden></option>
+                      <option value="fulltimeemployed">Full time employed</option>
+                      <option value="parttimeemployed">Part time employed</option>
+                      <option value="unemployed">Unemployed</option>
+                  </select>
+                  </div>
+                </div>
+  
+                <div class="shelf">
+                  <div class="labelbox">First Called Date:</div>
+                  <div class="valuebox"><input type="date" name=””></div>
+                </div>
+  
+                <div class="shelf">
+                    <div class="labelbox">Deceased Time:</div>
+                    <div class="valuebox"><input type="time" name=””></div>
+                </div>
+            
+                <div class="shelf">
+                    <div class="labelbox">Mother's Last Name:</div>
+                    <div class="valuebox"><input type="text" name=””></div>
+                </div>
+  
+                <div class="shelf">
+                  <div class="labelbox">Birth Place:</div>
+                  <div class="valuebox"><input type="text" name=””></div>
+                </div>
+  
+                <div class="shelf">
+                  <div class="labelbox">Citizenship:</div>
+                  <div class="valuebox">
+                    <textarea id="note" name="note" rows="4" cols="50"></textarea>
+                  </div>
+                </div>
+              </div>
+              
+              <div id="shelfcontainer">
+                <div class="shelf">
+                  <div class="labelbox">Gender Identity:</div>
+                  <div class="valuebox">
+                    <select id="genderidentity" name="genderidentity">
+                      <option value="none" selected disable hidden></option>
+                      <option value="male">Male</option>
+                      <option value="female">female</option>
+                      <option value="unknown">UnKnown</option>
+                  </select>
+                  </div>
+                </div>
+  
+                <div class="shelf">
+                  <div class="labelbox">Referral Source:</div>
+                  <div class="valuebox">
+                    <select id="referralsource" name="referralsource">
+                      <option value="vivekhospital">Vivek hospital</option>
+                      <option value="surathospital">Surat hospital</option>
+                  </select>
+                  </div>
+                </div>
+  
+                <div class="shelf">
+                    <div class="labelbox">Mother's Maiden:</div>
+                    <div class="valuebox"><input type="text" name="mothersmaiden"></div>
+                </div>
+            
+                <div class="shelf">
+                    <div class="labelbox">Mother Identifier:</div>
+                    <div class="valuebox"><input type="text" name="motheridentifier"></div>
+                </div>
+  
+                <div class="shelf">
+                  <div class="labelbox">Multiple Birth:</div>
+                  <div class="valuebox"><input type="checkbox" name="multiplebirth"></div>
+                </div>
+  
+                <div class="shelf">
+                  <div class="labelbox">Religion:</div>
+                  <div class="valuebox">
+                    <select id="religion" name="religion">
+                      <option value="none" selected disable hidden></option>
+                      <option value="christian">Christian: American Baptist Church</option>
+                      <option value="hindu">hindu</option>
+                  </select>
+                  </div>
+                </div>
+              </div>
+  
+              <div id="shelfcontainer">
+                <div class="shelf">
+                  <div class="labelbox">Sexual Orientation:</div>
+                  <div class="valuebox">
+                    <select id="sexualorientation" name="sexualorientation">
+                      <option value="none" selected disable hidden></option>
+                      <option value="bisexual">Bisexual</option>
+                      <option value="heterosexual">Heterosexual</option>
+                      <option value="homosexual">Homosexual</option>
+                    </select>
+                  </div>
+                  </div>
+    
+                  <div class="shelf">
+                    <div class="labelbox">Deceased:</div>
+                    <div class="valuebox"><input type="checkbox" name="deceased"></div>
+                  </div>
+    
+                <div class="shelf">
+                    <div class="labelbox">Mother's Middle Name:</div>
+                    <div class="valuebox">
+                      <select id="veteranmilitarystatus" name="veteranmilitarystatus">
+                        <option value="none" selected disable hidden></option>
+                        <option value="norecord">norecord</option>
+                      </select>
+                    </div>
+                </div>
+
+                <div class="shelf">
+                    <div class="labelbox">Veteran Military Status:</div>
+                    <div class="valuebox">
+                      <select id="veteranmilitarystatus" name="veteranmilitarystatus">
+                        <option value="none" selected disable hidden></option>
+                        <option value="norecord">norecord</option>
+                      </select>
+                    </div>
+                </div>
+            
+                <div class="shelf">
+                    <div class="labelbox">Nationality:</div>
+                    <div class="valuebox">
+                      <select id="Nationality" name="Nationality">
+                        <option value="american">american</option>
+                      </select>
+                    </div>
+                </div>
+    
+                <div class="shelf">
+                  <div class="labelbox">Driver's License:</div>
+                  <div class="valuebox"><input type="text" name=””></div>
+                </div>
+    
+                
+            
+              </div>
+
+            </div>
+          </div>
         
+        </div>
       </form>
     </div>
 
